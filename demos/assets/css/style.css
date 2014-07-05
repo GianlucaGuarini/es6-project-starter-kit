@@ -1,0 +1,42 @@
+body {
+  font-size: 1.3em;
+  font-family: "Helvetica Neue", helvetica, sans-serif;
+  margin: 0;
+  padding: 5% 0 0;
+}
+
+a {
+  color: black;
+}
+
+.row {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.api {
+  padding: 0;
+  list-style: none;
+}
+.api p {
+  margin: 0.1em;
+}
+.api pre {
+  margin-bottom: 0.2em;
+  margin-top: 1.5em;
+}
+.api ul {
+  margin: 0.2em;
+}
+.api ul li {
+  font-size: 0.8em;
+}
+
+footer {
+  margin: 3em 0 0;
+  padding: 10px 0;
+}
+footer a {
+  text-decoration: none;
+}

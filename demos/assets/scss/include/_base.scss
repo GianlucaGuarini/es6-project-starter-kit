@@ -1,0 +1,44 @@
+body {
+    font-size: 1.3em;
+    font-family: "Helvetica Neue", helvetica, sans-serif;
+    margin: 0;
+    padding: 5% 0 0;
+}
+
+a {
+    color: $link-color;
+}
+
+.row {
+    position: relative;
+
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+.api {
+    padding:0;
+    list-style: none;
+    p {
+        margin: 0.1em;
+    }
+    pre {
+        margin-bottom: 0.2em;
+        margin-top: 1.5em;
+    }
+    ul {
+        margin:0.2em;
+        li {
+            font-size: 0.8em;
+        }
+    }
+}
+
+footer {
+    margin:3em 0 0;
+    padding:10px 0;
+    a {
+        text-decoration: none;
+    }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= name %></title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="http://highlightjs.org/static/styles/github.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js"></script>
+
+  <% if (typeof analyticsId !== 'undefined') { %>
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-<%= analyticsId %>']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+  <% } %>
+
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,initial-scale=1.0"></head>
+<body>
+  <div role="main" class="row">
+
+    <h1>
+      <%= name %>
+      v
+      <%= version %></h1>
+    <p>
+      <%= description %>
+      </p>
+    <% if (typeof githubUsername !== 'undefined') { %>
+      <% if (typeof githubProjectName !== 'undefined') { %>
+        <iframe src="http://ghbtns.com/github-btn.html?user=<%= githubUsername %>&repo=<%= githubProjectName %>&type=watch&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="80" height="30">
+        </iframe>
+      <% } %>
+      <iframe src="http://ghbtns.com/github-btn.html?user=<%= githubUsername %>&type=follow&size=large"
+      allowtransparency="true" frameborder="0" scrolling="0" width="230" height="30">
+      </iframe>
+    <% } %>
+
+    <% if (typeof twitterUsername !== 'undefined') { %>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-text="<%= name %> - <%= description %>" data-via="gianlucaguarini" data-size="large">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <% } %>
+
+    <%=content%>
+
+    <footer>
+      <small>
+        &copy;
+        <%= author %>
+      </small>
+    </footer>
+  </div>
+
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="../dist/<%= name %>.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>
