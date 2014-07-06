@@ -33,6 +33,7 @@ module.exports = (grunt) ->
   # update the project gh-pages
   grunt.registerTask 'pages', [
     'default'
+    'markdown'
     'copy'
     'compass'
     'gh-pages'
@@ -45,7 +46,6 @@ module.exports = (grunt) ->
     'build'
     'mocha'
     'jsdoc'
-    'markdown'
   ]
 
   return
