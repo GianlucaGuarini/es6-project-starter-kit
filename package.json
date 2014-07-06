@@ -42,6 +42,7 @@
   "githubProjectName": "js-project-bootstrap",
   "twitterUsername": "gianlucaguarini",
   "authorHomepage": "gianlucaguarini.com",
+  "analyticsId": "UA-XXXX-XX",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/GianlucaGuarini/js-project-bootstrap/issues"

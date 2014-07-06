@@ -1,4 +1,4 @@
-Universal Bootstrap for any Javascript
+Universal Bootstrap for any Javascript Project
 ====================
 
-Initial environment setup to start any Javascript project with the right tools
+Initial environment setup to start any Javascript (node.js) project with the right tools
