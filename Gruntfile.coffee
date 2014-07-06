@@ -30,6 +30,13 @@ module.exports = (grunt) ->
     'saucelabs-mocha'
   ]
 
+  # update the project gh-pages
+  grunt.registerTask 'pages', [
+    'default'
+    'copy'
+    'gh-pages'
+  ]
+
   # Default task. to make a new release
   grunt.registerTask 'default', [
     'clean'

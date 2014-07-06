@@ -2,11 +2,11 @@
 
 # Set this to the root of your project when deployed:
 http_path = "/"
-css_dir = "demos/assets/css"
-sass_dir = "demos/assets/scss"
-images_dir = "demos/assets/img"
-javascripts_dir = "demos/assets/js"
-fonts_dir = "demos/assets/css/fonts"
+css_dir = "gh-pages/assets/css"
+sass_dir = "gh-pages/assets/scss"
+images_dir = "gh-pages/assets/img"
+javascripts_dir = "gh-pages/assets/js"
+fonts_dir = "gh-pages/assets/css/fonts"
 
 #output_style = :compressed
 

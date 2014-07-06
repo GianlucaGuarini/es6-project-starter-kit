@@ -15,3 +15,9 @@ npm-debug.log
 node_modules
 .sass-cache
 .DS_Store
+.grunt
+
+# we don't need to push these files
+# they will be copied by the grunt copy task
+gh-pages/doc
+gh-pages/assets/dist
