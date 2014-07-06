@@ -34,6 +34,7 @@ module.exports = (grunt) ->
   grunt.registerTask 'pages', [
     'default'
     'copy'
+    'compass'
     'gh-pages'
     'clean:gh-pages'
   ]
@@ -42,7 +43,6 @@ module.exports = (grunt) ->
   grunt.registerTask 'default', [
     'clean:build'
     'build'
-    'compass'
     'mocha'
     'jsdoc'
     'markdown'

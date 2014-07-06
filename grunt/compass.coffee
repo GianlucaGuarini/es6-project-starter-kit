@@ -2,4 +2,4 @@
 module.exports =
   dist:
     options:
-      config: 'config.rb'
+      config: 'gh-pages/config.rb'
