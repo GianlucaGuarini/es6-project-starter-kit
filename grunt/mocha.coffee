@@ -1,3 +1,4 @@
+# mocha tests
 module.exports =
   test:
     src: ['test/*.html']

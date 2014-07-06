@@ -13,35 +13,26 @@
     root.MyScript = factory();
   }
 }(this, function () {
-  
-var helpers_helpers, main;
-helpers_helpers = {
-    trim: function (string) {
-        return string.replace(/^\s+|\s+$/gm, '');
-    }
-};
-main = function (exports) {
+  var helpers_helpers, index;
+helpers_helpers = function (exports) {
     /**
-     *
-     * PRIVATE Stuff
-     *
+     * @module helpers
      */
-    var
-        // includes
-        _helpers = helpers_helpers, _sayHi = function () {
+    exports = {
+        trim: function (string) {
+            return string.replace(/^\s+|\s+$/gm, '');
+        }
+    };
+    return exports;
+}({});
+index = function (exports) {
+    var _helpers = helpers_helpers, _sayHi = function () {
             return 'hi there! ';
         };
-    /**
-     *
-     * PUBLIC Stuff
-     *
-     * Just return a value to define the module export.
-     * This example returns an object,
-     * but the module can return a function as the exported value.
-     */
-    return {
-        _VERSION: '0.0.1',
+    exports = {
+        _VERSION: '@VERSION',
         greeting: _sayHi
     };
-}({});	return main;
+    return exports;
+}({});  return index;
 }));

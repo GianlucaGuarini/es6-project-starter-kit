@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Index</title>
+    <title>JSDoc: Source: index.js</title>
     
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,30 +17,43 @@
 
 <div id="main">
     
-    <h1 class="page-title">Index</h1>
+    <h1 class="page-title">Source: index.js</h1>
     
     
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source"><code>/** @module main */
+// PRIVATE Stuff
+var
+// includes
+_helpers = require('helpers/helpers'),
+_sayHi = function () {
+  return 'hi there! ';
+};
+
+// PUBLIC API
+/*
+ * Just return a value to define the module export.
+ * This example returns an object,
+ * but the module can return a function as the exported value.
+ */
+module.exports = {
+  _VERSION: '@VERSION',
+  greeting: _sayHi
+};
 
 
-    <h3> </h3>
 
 
 
 
 
-
-
-
-
-    
-
-
-
-
-
+</code></pre>
+        </article>
+    </section>
 
 
 

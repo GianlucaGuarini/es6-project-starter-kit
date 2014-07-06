@@ -1,14 +1,10 @@
+# generate the content of the main github page from the markdown file
 module.exports = (grunt, options) =>
   dist:
     files:[
       src: ['*.md']
-      dest: 'demos/index.html'
+      dest: 'gh-pages/index.html'
     ]
     options:
-      template: 'demos/template.jst'
-      templateContext: grunt.util._.extend(options.pkg,{
-          githubUsername:'gianlucaguarini'
-          githubProjectName: 'js-project-bootstrap'
-          twitterUsername: 'gianlucaguarini'
-          authorHomepage: 'gianlucaguarini.com'
-        })
+      template: 'gh-pages/template.jst'
+      templateContext: options.pkg

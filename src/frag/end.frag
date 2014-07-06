@@ -1,2 +1,2 @@
-	return main;
+  return @MAIN;
 }));
