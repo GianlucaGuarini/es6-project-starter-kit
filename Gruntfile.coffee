@@ -35,11 +35,12 @@ module.exports = (grunt) ->
     'default'
     'copy'
     'gh-pages'
+    'clean:gh-pages'
   ]
 
   # Default task. to make a new release
   grunt.registerTask 'default', [
-    'clean'
+    'clean:build'
     'build'
     'compass'
     'mocha'

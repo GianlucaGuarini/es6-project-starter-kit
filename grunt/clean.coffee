@@ -2,8 +2,6 @@
 # Some grunt tasks could create extra folders you want to remove
 module.exports =
   build:
-    src: ['dist']
-  doc:
-    src: ['doc']
-  'gh-pages'
+    src: ['dist','doc']
+  'gh-pages':
   	src: ['.grunt']
