@@ -2,7 +2,7 @@
   "name": "MyScript",
   "version": "0.0.1",
   "description": "Initial environment setup to start any awesome Javascript project with the right tools",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "grunt test"
   },

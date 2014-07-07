@@ -4,14 +4,11 @@ amdclean = require('amdclean');
 
 module.exports = (grunt, options) =>
 
-  # split the path to the main file
-  mainFilePathSplit = options.pkg.main.split('/')
-  # detect the main file without .js
-  # the _.last() is a lodash method that is included in grunt.util._
-  mainFile = grunt.util._(mainFilePathSplit).last().replace('.js','');
+  # the main file without .js
+  mainFile = 'main';
   # Get the script intro and outro strings
   startFrag = fs.readFileSync('src/frag/start.frag','utf8').replace(/@SCRIPT/g, options.pkg.name)
-  endFrag = fs.readFileSync('src/frag/end.frag','utf8').replace(/@MAIN/g, mainFile)
+  endFrag = fs.readFileSync('src/frag/end.frag','utf8')
   # wrap all the js files in a define function to enable the commonjs import/export pattern
   # the requirejs optimizer needs the define functions to find and inject the nested dependecies
   commonJsWrapper =
@@ -27,8 +24,7 @@ module.exports = (grunt, options) =>
     preserveLicenseComments: false
     findNestedDependencies: true
     onBuildRead: (moduleName, path, contents) =>
-      # replace the version string whenever it's used
-      contents.replace(/@VERSION/g, options.pkg.version)
+      # replace the version string whenever it's used and
       # wrap all the files in a define function
       commonJsWrapper.start + contents + commonJsWrapper.end
     onModuleBundleComplete: (data) ->

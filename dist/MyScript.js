@@ -13,10 +13,11 @@
     root.MyScript = factory();
   }
 }(this, function () {
-  var helpers_helpers, index;
+  var helpers_helpers, main;
 helpers_helpers = function (exports) {
     /**
-     * @module helpers
+     * @module hepers
+     * All the helper functions needed in this project
      */
     exports = {
         trim: function (string) {
@@ -25,14 +26,11 @@ helpers_helpers = function (exports) {
     };
     return exports;
 }({});
-index = function (exports) {
+main = function (exports) {
     var _helpers = helpers_helpers, _sayHi = function () {
-            return 'hi there! ';
+            return 'hi there!';
         };
-    exports = {
-        _VERSION: '@VERSION',
-        greeting: _sayHi
-    };
+    exports = { greeting: _sayHi };
     return exports;
-}({});  return index;
+}({});  return main;
 }));

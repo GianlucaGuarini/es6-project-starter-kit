@@ -1,6 +1,6 @@
 # generate the documentation automatically from the source files
 module.exports =
   dist:
-    src: ['src/**/*.js'],
+    src: ['README.md','src/**/*.js'],
     options:
-      destination: 'doc'
+      destination: 'gh-pages/doc'
