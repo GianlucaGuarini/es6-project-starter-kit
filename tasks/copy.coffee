@@ -9,11 +9,4 @@ module.exports =
         ]
         dest: 'gh-pages/assets/'
       }
-      {
-        expand: true
-        src:[
-          'doc/**'
-        ]
-        dest: 'gh-pages/'
-      }
     ]

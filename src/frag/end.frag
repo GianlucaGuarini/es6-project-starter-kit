@@ -1,2 +1,2 @@
-  return @MAIN;
+  exports.@SCRIPT = main;
 }));

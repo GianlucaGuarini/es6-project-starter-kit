@@ -6,8 +6,8 @@ module.exports = (grunt) ->
   tasks = require('load-grunt-configs')(grunt,
     config:
       src: [
-        'grunt/*.coffee'
-        'grunt/*.js'
+        'tasks/*.coffee'
+        'tasks/*.js'
       ]
     pkg: grunt.file.readJSON('package.json')
     now: new Date().getTime()
@@ -19,6 +19,7 @@ module.exports = (grunt) ->
   # build just the javascript files exporting them in the dist folder
   grunt.registerTask 'build', [
     'jshint'
+    '6to5'
     'requirejs'
   ]
 
@@ -45,7 +46,7 @@ module.exports = (grunt) ->
     'clean:build'
     'build'
     'mocha'
-    'jsdoc'
+    'clean:tmp'
   ]
 
   return

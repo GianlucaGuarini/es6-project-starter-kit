@@ -1,4 +1,4 @@
-Universal Bootstrap for any Javascript Project
+Universal Starter Kit for any javascript ES6 project
 ====================
 
-Initial environment setup to start any Javascript (node.js) project with the right tools
+Initial environment setup to start any javascript ES6 (node.js) project using the right tools
