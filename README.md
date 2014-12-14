@@ -44,6 +44,13 @@ export default {
 };
 ```
 
+## Tools available
+
+- [gruntjs](http://gruntjs.com/)
+- [6to5](https://6to5.org/)
+- [requirejs optimizer](https://github.com/jrburke/r.js/)
+- [amdclean](https://github.com/gfranko/amdclean)
+
 # Usage
 
 Once you've downloaded the files in this repo please run the following command in your terminal from the project folder (it may require `sudo`):
@@ -75,8 +82,9 @@ $ grunt build
 
 ### Run the saucelabs tests
 ```shell
-$ grunt build
+$ grunt saucelabs
 ```
+
 
 [npm-url]: https://npmjs.org/package/es6-project-starter-kit
 [npm-version-image]: http://img.shields.io/npm/v/es6-project-starter-kit.svg?style=flat-square

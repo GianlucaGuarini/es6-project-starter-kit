@@ -1,6 +1,6 @@
 {
   "name": "es6-project-starter-kit",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Universal Starter Kit to build any javascript ES6 project/library runnable in nodejs and on any browser",
   "main": "index.js",
   "scripts": {
