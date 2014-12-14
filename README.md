@@ -82,11 +82,11 @@ $ grunt build
 [npm-version-image]: http://img.shields.io/npm/v/es6-project-starter-kit.svg?style=flat-square
 [npm-downloads-image]: http://img.shields.io/npm/dm/es6-project-starter-kit.svg?style=flat-square
 
-[gemnasium-image]: https://img.shields.io/gemnasium/gianlucaguarini/es6-project-starter-kit.svg?style=flat-square
-[gemnasium-url]: https://gemnasium.com/gianlucaguarini/es6-project-starter-kit
+[gemnasium-image]: https://img.shields.io/gemnasium/GianlucaGuarini/es6-project-starter-kit.svg?style=flat-square
+[gemnasium-url]: https://gemnasium.com/GianlucaGuarini/es6-project-starter-kit
 
-[travis-url]:https://travis-ci.org/gianlucaguarini/es6-project-starter-kit
-[travis-image]: https://img.shields.io/travis/gianlucaguarini/es6-project-starter-kit.svg?style=flat-square
+[travis-url]:https://travis-ci.org/GianlucaGuarini/es6-project-starter-kit
+[travis-image]: https://img.shields.io/travis/GianlucaGuarini/es6-project-starter-kit.svg?style=flat-square
 
 [saucelabs-image]:https://saucelabs.com/browser-matrix/es6-project-starter-kit.svg
 [saucelabs-url]:https://saucelabs.com/u/es6-project-starter-kit
