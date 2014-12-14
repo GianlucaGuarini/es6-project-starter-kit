@@ -2,7 +2,6 @@ Universal Starter Kit to build any javascript ES6 project/library runnable in no
 ====================
 
 [![Build Status][travis-image]][travis-url]
-[![Coverage Status][coveralls-image]][coveralls-url]
 
 [![Dependency Status][gemnasium-image]][gemnasium-url]
 [![NPM version][npm-version-image]][npm-url]
@@ -83,14 +82,11 @@ $ grunt build
 [npm-version-image]: http://img.shields.io/npm/v/es6-project-starter-kit.svg?style=flat-square
 [npm-downloads-image]: http://img.shields.io/npm/dm/es6-project-starter-kit.svg?style=flat-square
 
-[coveralls-image]:https://img.shields.io/coveralls/gianlucaguarini/es6-project-starter-kit.js.svg?style=flat-square
-[coveralls-url]:https://coveralls.io/r/gianlucaguarini/es6-project-starter-kit.js
+[gemnasium-image]: https://img.shields.io/gemnasium/gianlucaguarini/es6-project-starter-kit.svg?style=flat-square
+[gemnasium-url]: https://gemnasium.com/gianlucaguarini/es6-project-starter-kit
 
-[gemnasium-image]: https://img.shields.io/gemnasium/gianlucaguarini/es6-project-starter-kit.js.svg?style=flat-square
-[gemnasium-url]: https://gemnasium.com/gianlucaguarini/es6-project-starter-kit.js
-
-[travis-url]:https://travis-ci.org/gianlucaguarini/es6-project-starter-kit.js
-[travis-image]: https://img.shields.io/travis/gianlucaguarini/es6-project-starter-kit.js.svg?style=flat-square
+[travis-url]:https://travis-ci.org/gianlucaguarini/es6-project-starter-kit
+[travis-image]: https://img.shields.io/travis/gianlucaguarini/es6-project-starter-kit.svg?style=flat-square
 
 [saucelabs-image]:https://saucelabs.com/browser-matrix/es6-project-starter-kit.svg
 [saucelabs-url]:https://saucelabs.com/u/es6-project-starter-kit
