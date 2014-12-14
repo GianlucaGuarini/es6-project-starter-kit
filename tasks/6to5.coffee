@@ -15,6 +15,7 @@ module.exports = (grunt) ->
   options:
     blacklist: ["useStrict"]
 
+  # this will be compiled with requirejs
   amdNoRuntime:
     options:
       modules: "amd"
@@ -23,26 +24,17 @@ module.exports = (grunt) ->
     files:[
       expand: true
       cwd: "src"
-      src: "**/*.js"
+      src: "**/**/*.js"
       dest: "tmp"
     ]
-  amd:
-    options:
-      modules: "amd"
-      amdModuleIds: true
-    files:[
-      expand: true
-      cwd: "src"
-      src: "**/*.js"
-      dest: "dist/amd"
-    ]
+  #node js environments
   cmj:
     options:
       modules: "common"
     files:[
       expand: true
       cwd: "src"
-      src: "**/*.js"
+      src: "**/**/*.js"
       dest: "dist/cmj"
     ]
 

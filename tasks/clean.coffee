@@ -5,5 +5,3 @@ module.exports =
     src: ['dist']
   tmp:
   	src: ['tmp']
-  'gh-pages':
-  	src: ['.grunt']

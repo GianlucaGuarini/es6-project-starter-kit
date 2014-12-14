@@ -1,14 +1,14 @@
 {
-  "name": "MyScript",
+  "name": "es6-project-starter-kit",
   "version": "0.0.1",
-  "description": "Initial environment setup to start any awesome Javascript project with the right tools",
+  "description": "Universal Starter Kit to build any javascript ES6 project/library runnable in nodejs and on any browser",
   "main": "index.js",
   "scripts": {
     "test": "grunt test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/GianlucaGuarini/js-project-bootstrap.git"
+    "url": "https://github.com/GianlucaGuarini/es6-project-starter-kit.git"
   },
   "keywords": [
     "javascript",
@@ -23,32 +23,22 @@
     "chai": "^1.10.0",
     "grunt": "^0.4.5",
     "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-compass": "^1.0.1",
     "grunt-contrib-connect": "^0.9.0",
-    "grunt-contrib-copy": "^0.7.0",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-requirejs": "^0.4.4",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-gh-pages": "^0.9.1",
-    "grunt-markdown": "^0.6.1",
     "grunt-mocha": "^0.4.11",
     "grunt-saucelabs": "^8.4.1",
     "load-grunt-configs": "^0.4.1",
     "load-grunt-tasks": "^1.0.0",
     "mocha": "^2.0.1",
-    "simulant": "^0.1.3",
     "sinon": "^1.12.2",
     "sinon-chai": "^2.6.0"
   },
   "author": "Gianluca Guarini (http://gianlucaguarini.com/)",
-  "githubUsername": "gianlucaguarini",
-  "githubProjectName": "js-project-bootstrap",
-  "twitterUsername": "gianlucaguarini",
-  "authorHomepage": "gianlucaguarini.com",
-  "analyticsId": "UA-XXXX-XX",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/GianlucaGuarini/js-project-bootstrap/issues"
+    "url": "https://github.com/GianlucaGuarini/es6-project-starter-kit/issues"
   },
-  "homepage": "https://github.com/GianlucaGuarini/js-project-bootstrap"
+  "homepage": "https://github.com/GianlucaGuarini/es6-project-starter-kit"
 }

@@ -12,32 +12,29 @@ var helpers = require('./helpers/helpers')["default"];
  * @class
  * An awesome script
  */
-var Greeging = (function () {
-  var Greeging = function Greeging() {};
-
-  Greeging.prototype.constrictor = function () {
-    this.message = "hi there!";
+var Greeting = (function () {
+  var Greeting = function Greeting(name, text) {
+    if (name === undefined) name = "Dear Coder";
+    if (text === undefined) text = "hi there";
+    this.name = name;
+    this.text = text;
   };
 
-  _classProps(Greeging, null, {
+  _classProps(Greeting, null, {
     message: {
       get: function () {
-        return this.message;
+        return "" + this.text + " " + this.name + "!";
       },
-      set: function (message) {
-        this.message = message;
+      set: function (text) {
+        this.text = helpers.trim(text);
       }
     }
   });
 
-  return Greeging;
+  return Greeting;
 })();
 
 exports["default"] = {
   helpers: helpers,
-  /**
-   * Returns a welcome string
-   * @return { String }
-   */
-  Greeging: Greeging
+  Greeting: Greeting
 };

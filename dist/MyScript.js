@@ -68,7 +68,7 @@
 
   polyfill.hasOwn = Object.prototype.hasOwnProperty;
   polyfill.slice = Array.prototype.slice;
-})(typeof global === "undefined" ? self : global);var helpers_helpers, main;
+})(typeof global === "undefined" ? self : global);var helpers_helpers, index;
 helpers_helpers = function (exports) {
   'use strict';
   exports['default'] = {
@@ -83,45 +83,38 @@ helpers_helpers = function (exports) {
   };
   return exports;
 }({});
-main = function (exports, _helpersHelpers) {
-  var _classProps = function (child, staticProps, instanceProps) {
-    if (staticProps)
-      Object.defineProperties(child, staticProps);
-    if (instanceProps)
-      Object.defineProperties(child.prototype, instanceProps);
-  };
+index = function (exports, _helpersHelpers) {
   'use strict';
   var helpers = _helpersHelpers['default'];
   /**
    * @class
    * An awesome script
    */
-  var Greeging = function () {
-    var Greeging = function Greeging() {
+  var Greeting = function () {
+    var Greeting = function Greeting(name, text) {
+      if (name === undefined)
+        name = 'Dear Coder';
+      if (text === undefined)
+        text = 'hi there';
+      this.name = name;
+      this.text = text;
     };
-    Greeging.prototype.constrictor = function () {
-      this.message = 'hi there!';
-    };
-    _classProps(Greeging, null, {
+    polyfill.classProps(Greeting, null, {
       message: {
         get: function () {
-          return this.message;
+          return '' + this.text + ' ' + this.name + '!';
         },
-        set: function (message) {
-          this.message = message;
+        set: function (text) {
+          this.text = helpers.trim(text);
         }
       }
     });
-    return Greeging;
+    return Greeting;
   }();
   exports['default'] = {
     helpers: helpers,
-    /**
-     * Returns a welcome string
-     * @return { String }
-     */
-    Greeging: Greeging
+    Greeting: Greeting
   };
   return exports;
-}({}, helpers_helpers);  exports.MyScript = main;
+}({}, helpers_helpers);  exports.MyScript = index['default'];
 }));

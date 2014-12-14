@@ -84,5 +84,15 @@
 
     // Custom Globals
     // additional predefined global variables
-    "globals"       : {}
+    "globals"       : {
+    	"describe": true,
+    	"it": true,
+    	"expect": true,
+    	"assert": true,
+    	"before" :true,
+    	"after": true,
+    	"mocha": true,
+    	"sinon": true,
+    	"chai": true
+    }
 }

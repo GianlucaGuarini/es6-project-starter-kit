@@ -1,2 +1,2 @@
-  exports.@SCRIPT = main;
+  exports.@SCRIPT = index['default'];
 }));

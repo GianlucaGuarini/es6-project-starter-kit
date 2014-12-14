@@ -1,1 +1,1 @@
-module.exports = require('src/main');
+module.exports = require('dist/cmjs/index');
