@@ -13,7 +13,9 @@
   "keywords": [
     "javascript",
     "bootstrap",
-    "boilerplate"
+    "boilerplate",
+    "es6",
+    "starter kit"
   ],
   "devDependencies": {
     "6to5": "^1.15.0",
