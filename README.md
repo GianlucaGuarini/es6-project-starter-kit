@@ -16,6 +16,7 @@ javascript next introduces a lot of new cool [features](https://6to5.org/feature
 
 ## javascript ES6
 
+
 ```javascript
 'use strict';
 
@@ -43,6 +44,16 @@ export default {
   Greeting
 };
 ```
+
+```javascript
+var greeting = new Greeting();
+
+console.log(greeting.message) // -> hi there Dear Coder!
+greeting.message = 'goodbye';
+console.log(greeting.message) // -> goodbye Dear Coder!
+
+```
+
 
 ## Tools available
 
