@@ -6,6 +6,9 @@ branches:
   only:
     - master
 
+after_success:
+    - grunt saucelabs
+
 before_script:
     - npm install grunt-cli -g
 

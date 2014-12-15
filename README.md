@@ -9,6 +9,8 @@ Universal Starter Kit to build any javascript ES6 project/library runnable in no
 
 [![MIT License][license-image]][license-url]
 
+[![Sauce Test Status][saucelabs-image]][saucelabs-url]
+
 
 # Introduction
 
@@ -115,6 +117,9 @@ $ grunt saucelabs
 
 [saucelabs-image]:https://saucelabs.com/browser-matrix/es6-project-starter-kit.svg
 [saucelabs-url]:https://saucelabs.com/u/es6-project-starter-kit
+
+[saucelabs-image]:https://saucelabs.com/browser-matrix/es6projectstarterkit.svg
+[saucelabs-url]:https://saucelabs.com/u/es6projectstarterkit
 
 [license-url]: LICENSE
 [license-image]: http://img.shields.io/badge/license-MIT-000000.svg?style=flat-square
