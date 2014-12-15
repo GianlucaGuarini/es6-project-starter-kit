@@ -75,6 +75,11 @@ $ grunt
 $ grunt test
 ```
 
+### To compile and/or test the project anytime a file gets changed
+```shell
+$ grunt watch
+```
+
 ### Convert the ES6 code into valid ES5 and combine the modules into one single file
 ```shell
 $ grunt build
