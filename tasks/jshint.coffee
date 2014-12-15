@@ -4,4 +4,5 @@ module.exports =
   	jshintrc: true
   all: [
     'src/**/*.js'
+    'test/**/*.js'
   ]
