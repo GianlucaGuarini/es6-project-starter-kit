@@ -49,7 +49,8 @@ export default {
 var greeting = new Greeting();
 
 console.log(greeting.message) // -> hi there Dear Coder!
-greeting.message = 'goodbye';
+// these white spaces will be trimmed
+greeting.message = '   goodbye';
 console.log(greeting.message) // -> goodbye Dear Coder!
 
 ```
