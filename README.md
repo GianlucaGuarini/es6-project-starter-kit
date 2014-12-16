@@ -41,10 +41,7 @@ class Greeting {
   }
 }
 
-export default {
-  helpers,
-  Greeting
-};
+export default Greeting;
 ```
 
 ```javascript
