@@ -6,7 +6,7 @@ import helpers from './helpers/helpers';
  * @class
  * An awesome script
  */
-class Greeting {
+class Greeter {
   constructor(name = 'Dear Coder', text = 'hi there') {
     this.name = name;
     this.text = text;
@@ -19,7 +19,4 @@ class Greeting {
   }
 }
 
-export default {
-  helpers,
-  Greeting
-};
+export default Greeter;

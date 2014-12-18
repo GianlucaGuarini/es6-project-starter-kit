@@ -9,7 +9,7 @@ module.exports = (grunt) ->
         'tasks/*.coffee'
         'tasks/*.js'
       ]
-    scriptName: 'MyScript'
+    scriptName: 'Greeter'
     pkg: grunt.file.readJSON('package.json')
     now: new Date().getTime()
   )

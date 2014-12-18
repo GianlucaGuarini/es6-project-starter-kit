@@ -28,7 +28,7 @@ import helpers from './helpers/helpers';
  * @class
  * An awesome script
  */
-class Greeting {
+class Greeter {
   constructor(name = 'Dear Coder', text = 'hi there') {
     this.name = name;
     this.text = text;
@@ -41,19 +41,16 @@ class Greeting {
   }
 }
 
-export default {
-  helpers,
-  Greeting
-};
+export default Greeter;
 ```
 
 ```javascript
-var greeting = new Greeting();
+var greeter = new Greeter();
 
-console.log(greeting.message) // -> hi there Dear Coder!
+console.log(greeter.message) // -> hi there Dear Coder!
 // these white spaces will be trimmed
-greeting.message = '   goodbye';
-console.log(greeting.message) // -> goodbye Dear Coder!
+greeter.message = '   goodbye';
+console.log(greeter.message) // -> goodbye Dear Coder!
 
 ```
 

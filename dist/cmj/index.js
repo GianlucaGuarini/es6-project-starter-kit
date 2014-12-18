@@ -12,15 +12,15 @@ var helpers = require('./helpers/helpers')["default"];
  * @class
  * An awesome script
  */
-var Greeting = (function () {
-  var Greeting = function Greeting(name, text) {
+var Greeter = (function () {
+  var Greeter = function Greeter(name, text) {
     if (name === undefined) name = "Dear Coder";
     if (text === undefined) text = "hi there";
     this.name = name;
     this.text = text;
   };
 
-  _classProps(Greeting, null, {
+  _classProps(Greeter, null, {
     message: {
       get: function () {
         return "" + this.text + " " + this.name + "!";
@@ -31,10 +31,7 @@ var Greeting = (function () {
     }
   });
 
-  return Greeting;
+  return Greeter;
 })();
 
-exports["default"] = {
-  helpers: helpers,
-  Greeting: Greeting
-};
+exports["default"] = Greeter;
