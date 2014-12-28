@@ -31,7 +31,7 @@ module.exports = (grunt, options) =>
         code: fs.readFileSync(outputFile)
         # wrap the output in a UMD (Universal Module Definition) pattern
         wrap:
-          start: startFrag + to5Runtime
+          start: startFrag + '\n' + to5Runtime
           end: endFrag
         )
 

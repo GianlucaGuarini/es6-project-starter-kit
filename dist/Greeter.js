@@ -12,7 +12,8 @@
       factory(root);
     }
   }(this, function(exports) {
-      "use strict";(function (global) {
+      "use strict";
+(function (global) {
   var polyfill = global.polyfill = {};
   polyfill.extends = function (child, parent) {
     child.prototype = Object.create(parent.prototype, {
