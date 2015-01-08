@@ -1,2 +1,2 @@
-  exports.@SCRIPT = index['default'];
+  exports.@SCRIPT = index;
 }));

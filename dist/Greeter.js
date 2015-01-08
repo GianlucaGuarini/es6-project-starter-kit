@@ -16,6 +16,9 @@
 (function (global) {
   var polyfill = global.polyfill = {};
   polyfill.inherits = function (child, parent) {
+    if (typeof parent !== "function" && parent !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof parent);
+    }
     child.prototype = Object.create(parent && parent.prototype, {
       constructor: {
         value: child,
@@ -96,6 +99,7 @@
 
   polyfill.hasOwn = Object.prototype.hasOwnProperty;
   polyfill.slice = Array.prototype.slice;
+  polyfill.bind = Function.prototype.bind;
   polyfill.defineProperty = function (obj, key, value) {
     return Object.defineProperty(obj, key, {
       value: value,
@@ -112,7 +116,7 @@ helpers_helpers = function (exports) {
    * @module hepers
    * All the helper functions needed in this project
    */
-  exports['default'] = {
+  exports = {
     /**
      * Returns a new string in which all leading and trailing occurrences of a set of specified characters from the current String object are removed.
      * @param  { String } string
@@ -148,7 +152,7 @@ index = function (exports, _helpersHelpers) {
       enumerable: true
     }
   });
-  exports['default'] = Greeter;
+  exports = Greeter;
   return exports;
-}({}, helpers_helpers);  exports.Greeter = index['default'];
+}({}, helpers_helpers);  exports.Greeter = index;
 }));

@@ -1,6 +1,6 @@
 {
   "name": "es6-project-starter-kit",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "Universal Starter Kit to build any javascript ES6 project/library runnable in nodejs and on any browser",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,7 @@
     "starter kit"
   ],
   "devDependencies": {
-    "6to5": "^2.5.0",
+    "6to5": "^2.7.4",
     "amdclean": "^2.4.0",
     "chai": "^1.10.0",
     "grunt": "^0.4.5",

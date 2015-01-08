@@ -1,3 +1,5 @@
+"use strict";
+
 var _prototypeProperties = function (child, staticProps, instanceProps) {
   if (staticProps) Object.defineProperties(child, staticProps);
   if (instanceProps) Object.defineProperties(child.prototype, instanceProps);
@@ -6,8 +8,6 @@ var _prototypeProperties = function (child, staticProps, instanceProps) {
 var _interopRequire = function (obj) {
   return obj && (obj["default"] || obj);
 };
-
-"use strict";
 
 var helpers = _interopRequire(require("./helpers/helpers"));
 
