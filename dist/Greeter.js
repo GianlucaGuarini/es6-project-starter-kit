@@ -15,19 +15,19 @@
       "use strict";
 (function (global) {
   var polyfill = global.polyfill = {};
-  polyfill.inherits = function (child, parent) {
-    if (typeof parent !== "function" && parent !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof parent);
+  polyfill.inherits = function (subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
     }
-    child.prototype = Object.create(parent && parent.prototype, {
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
       constructor: {
-        value: child,
+        value: subClass,
         enumerable: false,
         writable: true,
         configurable: true
       }
     });
-    if (parent) child.__proto__ = parent;
+    if (superClass) subClass.__proto__ = superClass;
   };
 
   polyfill.defaults = function (obj, defaults) {
@@ -108,6 +108,45 @@
       writable: true
     });
   };
+
+  polyfill.interopRequireWildcard = function (obj) {
+    return obj && obj.constructor === Object ? obj : {
+      default: obj
+    };
+  };
+
+  polyfill._extends = function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        target[key] = source[key];
+      }
+    }
+
+    return target;
+  };
+
+  polyfill.get = function get(object, property, receiver) {
+    var desc = Object.getOwnPropertyDescriptor(object, property);
+
+    if (desc === undefined) {
+      var parent = Object.getPrototypeOf(object);
+
+      if (parent === null) {
+        return undefined;
+      } else {
+        return get(parent, property, receiver);
+      }
+    } else if ("value" in desc && desc.writable) {
+      return desc.value;
+    } else {
+      var getter = desc.get;
+      if (getter === undefined) {
+        return undefined;
+      }
+      return getter.call(receiver);
+    }
+  };
 })(typeof global === "undefined" ? self : global);
 var helpers_helpers, index;
 helpers_helpers = function (exports) {
@@ -135,23 +174,27 @@ index = function (exports, _helpersHelpers) {
    * @class
    * An awesome script
    */
-  var Greeter = function Greeter() {
-    var name = arguments[0] === undefined ? 'Dear Coder' : arguments[0];
-    var text = arguments[1] === undefined ? 'hi there' : arguments[1];
-    this.name = name;
-    this.text = text;
-  };
-  polyfill.prototypeProperties(Greeter, null, {
-    message: {
-      get: function () {
-        return '' + this.text + ' ' + this.name + '!';
-      },
-      set: function (text) {
-        this.text = helpers.trim(text);
-      },
-      enumerable: true
+  var Greeter = function () {
+    function Greeter() {
+      var name = arguments[0] === undefined ? 'Dear Coder' : arguments[0];
+      var text = arguments[1] === undefined ? 'hi there' : arguments[1];
+      this.name = name;
+      this.text = text;
     }
-  });
+    polyfill.prototypeProperties(Greeter, null, {
+      message: {
+        get: function () {
+          return '' + this.text + ' ' + this.name + '!';
+        },
+        set: function (text) {
+          this.text = helpers.trim(text);
+        },
+        enumerable: true,
+        configurable: true
+      }
+    });
+    return Greeter;
+  }();
   exports = Greeter;
   return exports;
 }({}, helpers_helpers);  exports.Greeter = index;
