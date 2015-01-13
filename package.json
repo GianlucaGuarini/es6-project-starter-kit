@@ -18,7 +18,7 @@
     "starter kit"
   ],
   "devDependencies": {
-    "6to5": "^2.11.0",
+    "6to5": "^2.11.4",
     "amdclean": "^2.4.0",
     "chai": "^1.10.0",
     "grunt": "^0.4.5",
