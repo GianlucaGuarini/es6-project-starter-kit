@@ -20,6 +20,7 @@ module.exports = (grunt) ->
     options:
       modules: "amd"
       amdModuleIds: true
+      loose: ['forOf']
       runtime: "polyfill"
     files:[
       expand: true
@@ -30,6 +31,7 @@ module.exports = (grunt) ->
   # node js environments
   node:
     options:
+      loose: ['forOf']
       modules: "common"
     files:[
       expand: true
