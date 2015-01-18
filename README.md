@@ -20,7 +20,6 @@ javascript next introduces a lot of new cool [features](https://6to5.org/feature
 
 
 ```javascript
-'use strict';
 
 import helpers from './helpers/helpers';
 
