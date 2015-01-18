@@ -150,7 +150,6 @@
 })(typeof global === "undefined" ? self : global);
 var helpers_helpers, index;
 helpers_helpers = function (exports) {
-  'use strict';
   /**
    * @module hepers
    * All the helper functions needed in this project
@@ -168,7 +167,6 @@ helpers_helpers = function (exports) {
   return exports;
 }({});
 index = function (exports, _helpersHelpers) {
-  'use strict';
   var helpers = polyfill.interopRequire(_helpersHelpers);
   /**
    * @class
