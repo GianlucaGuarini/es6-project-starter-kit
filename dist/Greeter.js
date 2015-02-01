@@ -231,16 +231,7 @@ helpers_helpers = function (exports) {
   return exports;
 }({});
 index = function (exports, _helpersHelpers) {
-  var _interopRequire = function (obj) {
-    return obj && obj.__esModule ? obj['default'] : obj;
-  };
-  var _prototypeProperties = function (child, staticProps, instanceProps) {
-    if (staticProps)
-      Object.defineProperties(child, staticProps);
-    if (instanceProps)
-      Object.defineProperties(child.prototype, instanceProps);
-  };
-  var helpers = _interopRequire(_helpersHelpers);
+  var helpers = to5Runtime.interopRequire(_helpersHelpers);
   /**
    * @class
    * An awesome script
@@ -252,7 +243,7 @@ index = function (exports, _helpersHelpers) {
       this.name = name;
       this.text = text;
     }
-    _prototypeProperties(Greeter, null, {
+    to5Runtime.prototypeProperties(Greeter, null, {
       message: {
         get: function () {
           return '' + this.text + ' ' + this.name + '!';

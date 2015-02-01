@@ -20,6 +20,7 @@ module.exports = (grunt) ->
     options:
       modules: 'amd'
       loose: 'all'
+      runtime: true
     files:[
       expand: true
       cwd: 'src'
