@@ -1,6 +1,6 @@
 {
   "name": "es6-project-starter-kit",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Universal Starter Kit to build any javascript ES6 project/library runnable in nodejs and on any browser",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,7 @@
     "starter kit"
   ],
   "devDependencies": {
-    "6to5": "^2.13.7",
+    "6to5": "^3.3.1",
     "amdclean": "^2.4.0",
     "chai": "^1.10.0",
     "grunt": "^0.4.5",
@@ -40,5 +40,8 @@
   "bugs": {
     "url": "https://github.com/GianlucaGuarini/es6-project-starter-kit/issues"
   },
-  "homepage": "https://github.com/GianlucaGuarini/es6-project-starter-kit"
+  "homepage": "https://github.com/GianlucaGuarini/es6-project-starter-kit",
+  "dependencies": {
+    "6to5-runtime": "^3.3.1"
+  }
 }

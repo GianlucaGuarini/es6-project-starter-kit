@@ -1,42 +1,41 @@
-to5 = require("6to5")
+to5 = require('6to5')
 
 module.exports = (grunt) ->
   # Avoiding the use of the plugin grunt plugin to use always the latest 6to5 version
   # register the task https://github.com/6to5/grunt-6to5
-  grunt.registerMultiTask "6to5", "Transpile ES6 to ES5", ->
+  grunt.registerMultiTask '6to5', 'Transpile ES6 to ES5', ->
     options = @options()
     @files.forEach (el) ->
       options.filename = el.src[0]
-      options.filenameRelative = el.src[0].replace("src/","")
+      options.filenameRelative = el.src[0].replace('src/','')
       res = to5.transformFileSync(el.src[0], options)
       grunt.file.write el.dest, res.code
-      grunt.file.write el.dest + ".map", JSON.stringify(res.map)  if res.map
+      grunt.file.write el.dest + '.map', JSON.stringify(res.map)  if res.map
 
   options:
-    blacklist: ["useStrict"]
+    blacklist: ['useStrict']
 
   # this will be compiled with requirejs
   browser:
     options:
-      modules: "amd"
-      amdModuleIds: true
-      loose: ['all']
-      runtime: "polyfill"
+      modules: 'amd'
+      loose: 'all'
     files:[
       expand: true
-      cwd: "src"
-      src: "**/**/*.js"
-      dest: "tmp"
+      cwd: 'src'
+      src: '**/**/*.js'
+      dest: 'tmp'
     ]
   # node js environments
   node:
     options:
-      loose: ['all']
-      modules: "common"
+      loose: 'all'
+      modules: 'common'
+      optional: ['selfContained']
     files:[
       expand: true
-      cwd: "src"
-      src: "**/**/*.js"
-      dest: "dist/cmj"
+      cwd: 'src'
+      src: '**/**/*.js'
+      dest: 'dist/cmj'
     ]
 

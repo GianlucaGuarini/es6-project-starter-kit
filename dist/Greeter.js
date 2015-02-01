@@ -14,8 +14,8 @@
   }(this, function(exports) {
       "use strict";
 (function (global) {
-  var polyfill = global.polyfill = {};
-  polyfill.inherits = function (subClass, superClass) {
+  var to5Runtime = global.to5Runtime = {};
+  to5Runtime.inherits = function (subClass, superClass) {
     if (typeof superClass !== "function" && superClass !== null) {
       throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
     }
@@ -30,7 +30,7 @@
     if (superClass) subClass.__proto__ = superClass;
   };
 
-  polyfill.defaults = function (obj, defaults) {
+  to5Runtime.defaults = function (obj, defaults) {
     for (var key in defaults) {
       if (obj[key] === undefined) {
         obj[key] = defaults[key];
@@ -40,12 +40,12 @@
     return obj;
   };
 
-  polyfill.prototypeProperties = function (child, staticProps, instanceProps) {
+  to5Runtime.prototypeProperties = function (child, staticProps, instanceProps) {
     if (staticProps) Object.defineProperties(child, staticProps);
     if (instanceProps) Object.defineProperties(child.prototype, instanceProps);
   };
 
-  polyfill.applyConstructor = function (Constructor, args) {
+  to5Runtime.applyConstructor = function (Constructor, args) {
     var instance = Object.create(Constructor.prototype);
 
     var result = Constructor.apply(instance, args);
@@ -53,7 +53,7 @@
     return result != null && (typeof result == "object" || typeof result == "function") ? result : instance;
   };
 
-  polyfill.taggedTemplateLiteral = function (strings, raw) {
+  to5Runtime.taggedTemplateLiteral = function (strings, raw) {
     return Object.freeze(Object.defineProperties(strings, {
       raw: {
         value: Object.freeze(raw)
@@ -61,15 +61,20 @@
     }));
   };
 
-  polyfill.interopRequire = function (obj) {
-    return obj && (obj["default"] || obj);
+  to5Runtime.taggedTemplateLiteralLoose = function (strings, raw) {
+    strings.raw = raw;
+    return strings;
   };
 
-  polyfill.toArray = function (arr) {
+  to5Runtime.interopRequire = function (obj) {
+    return obj && obj.__esModule ? obj.default : obj;
+  };
+
+  to5Runtime.toArray = function (arr) {
     return Array.isArray(arr) ? arr : Array.from(arr);
   };
 
-  polyfill.slicedToArray = function (arr, i) {
+  to5Runtime.slicedToArray = function (arr, i) {
     if (Array.isArray(arr)) {
       return arr;
     } else {
@@ -85,7 +90,7 @@
     }
   };
 
-  polyfill.objectWithoutProperties = function (obj, keys) {
+  to5Runtime.objectWithoutProperties = function (obj, keys) {
     var target = {};
 
     for (var i in obj) {
@@ -97,10 +102,10 @@
     return target;
   };
 
-  polyfill.hasOwn = Object.prototype.hasOwnProperty;
-  polyfill.slice = Array.prototype.slice;
-  polyfill.bind = Function.prototype.bind;
-  polyfill.defineProperty = function (obj, key, value) {
+  to5Runtime.hasOwn = Object.prototype.hasOwnProperty;
+  to5Runtime.slice = Array.prototype.slice;
+  to5Runtime.bind = Function.prototype.bind;
+  to5Runtime.defineProperty = function (obj, key, value) {
     return Object.defineProperty(obj, key, {
       value: value,
       enumerable: true,
@@ -109,24 +114,60 @@
     });
   };
 
-  polyfill.interopRequireWildcard = function (obj) {
-    return obj && obj.constructor === Object ? obj : {
+  to5Runtime.asyncToGenerator = function (fn) {
+    return function () {
+      var gen = fn.apply(this, arguments);
+
+      return new Promise(function (resolve, reject) {
+        var callNext = step.bind(null, "next");
+
+        var callThrow = step.bind(null, "throw");
+
+        function step(key, arg) {
+          try {
+            var info = gen[key](arg);
+
+            var value = info.value;
+          } catch (error) {
+            reject(error);
+
+            return;
+          }
+          if (info.done) {
+            resolve(value);
+          } else {
+            Promise.resolve(value).then(callNext, callThrow);
+          }
+        }
+
+        callNext();
+      });
+    };
+  };
+
+  to5Runtime.interopRequireWildcard = function (obj) {
+    return obj && obj.__esModule ? obj : {
       default: obj
     };
   };
 
-  polyfill._extends = function (target) {
+  to5Runtime._typeof = function (obj) {
+    return obj && obj.constructor === Symbol ? "symbol" : typeof obj;
+  };
+
+  to5Runtime._extends = Object.assign || function (target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
       for (var key in source) {
-        target[key] = source[key];
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
       }
     }
 
     return target;
   };
-
-  polyfill.get = function get(object, property, receiver) {
+  to5Runtime.get = function get(object, property, receiver) {
     var desc = Object.getOwnPropertyDescriptor(object, property);
 
     if (desc === undefined) {
@@ -145,6 +186,29 @@
         return undefined;
       }
       return getter.call(receiver);
+    }
+  };
+
+  to5Runtime.set = function set(object, property, value, receiver) {
+    var desc = Object.getOwnPropertyDescriptor(object, property);
+
+    if (desc === undefined) {
+      var parent = Object.getPrototypeOf(object);
+
+      if (parent === null) {
+        return;
+      } else {
+        return set(parent, property, value, receiver);
+      }
+    } else if ("value" in desc && desc.writable) {
+      desc.value = value;
+      return;
+    } else {
+      var setter = desc.set;
+      if (setter === undefined) {
+        return;
+      }
+      return setter.call(receiver, value);
     }
   };
 })(typeof global === "undefined" ? self : global);
@@ -167,7 +231,16 @@ helpers_helpers = function (exports) {
   return exports;
 }({});
 index = function (exports, _helpersHelpers) {
-  var helpers = polyfill.interopRequire(_helpersHelpers);
+  var _interopRequire = function (obj) {
+    return obj && obj.__esModule ? obj['default'] : obj;
+  };
+  var _prototypeProperties = function (child, staticProps, instanceProps) {
+    if (staticProps)
+      Object.defineProperties(child, staticProps);
+    if (instanceProps)
+      Object.defineProperties(child.prototype, instanceProps);
+  };
+  var helpers = _interopRequire(_helpersHelpers);
   /**
    * @class
    * An awesome script
@@ -179,7 +252,7 @@ index = function (exports, _helpersHelpers) {
       this.name = name;
       this.text = text;
     }
-    polyfill.prototypeProperties(Greeter, null, {
+    _prototypeProperties(Greeter, null, {
       message: {
         get: function () {
           return '' + this.text + ' ' + this.name + '!';
@@ -187,7 +260,6 @@ index = function (exports, _helpersHelpers) {
         set: function (text) {
           this.text = helpers.trim(text);
         },
-        enumerable: true,
         configurable: true
       }
     });

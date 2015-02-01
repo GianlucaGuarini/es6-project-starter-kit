@@ -1,13 +1,6 @@
-var _prototypeProperties = function (child, staticProps, instanceProps) {
-  if (staticProps) Object.defineProperties(child, staticProps);
-  if (instanceProps) Object.defineProperties(child.prototype, instanceProps);
-};
+var _to5Helpers = require("6to5-runtime/helpers");
 
-var _interopRequire = function (obj) {
-  return obj && (obj["default"] || obj);
-};
-
-var helpers = _interopRequire(require("./helpers/helpers"));
+var helpers = _to5Helpers.interopRequire(require("./helpers/helpers"));
 
 /**
  * @class
@@ -21,7 +14,7 @@ var Greeter = (function () {
     this.text = text;
   }
 
-  _prototypeProperties(Greeter, null, {
+  _to5Helpers.prototypeProperties(Greeter, null, {
     message: {
       get: function () {
         return "" + this.text + " " + this.name + "!";
@@ -29,7 +22,6 @@ var Greeter = (function () {
       set: function (text) {
         this.text = helpers.trim(text);
       },
-      enumerable: true,
       configurable: true
     }
   });
