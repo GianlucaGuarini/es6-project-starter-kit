@@ -211,6 +211,16 @@
       return setter.call(receiver, value);
     }
   };
+
+  to5Runtime.classCallCheck = function (instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  };
+
+  to5Runtime.objectDestructuringEmpty = function (obj) {
+    if (obj == null) throw new TypeError("Cannot destructure undefined");
+  };
 })(typeof global === "undefined" ? self : global);
 var helpers_helpers, index;
 helpers_helpers = function (exports) {
@@ -240,6 +250,7 @@ index = function (exports, _helpersHelpers) {
     function Greeter() {
       var name = arguments[0] === undefined ? 'Dear Coder' : arguments[0];
       var text = arguments[1] === undefined ? 'hi there' : arguments[1];
+      to5Runtime.classCallCheck(this, Greeter);
       this.name = name;
       this.text = text;
     }

@@ -10,6 +10,8 @@ var Greeter = (function () {
   function Greeter() {
     var name = arguments[0] === undefined ? "Dear Coder" : arguments[0];
     var text = arguments[1] === undefined ? "hi there" : arguments[1];
+    _to5Helpers.classCallCheck(this, Greeter);
+
     this.name = name;
     this.text = text;
   }

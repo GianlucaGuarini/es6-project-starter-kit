@@ -1,5 +1,8 @@
 ## Changelog
 
+### v2.0.2
+  * updated: 6to5 to 3.3.10
+
 ### v2.0.1
   * updated: the amd output will use only the 6to5 runtime injected with the build script
 
