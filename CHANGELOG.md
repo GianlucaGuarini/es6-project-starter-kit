@@ -1,5 +1,8 @@
 ## Changelog
 
+### v2.0.3
+  * updated: 6to5 to 3.6.0
+
 ### v2.0.2
   * updated: 6to5 to 3.3.10
 

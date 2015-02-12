@@ -31,9 +31,14 @@
   };
 
   to5Runtime.defaults = function (obj, defaults) {
-    for (var key in defaults) {
-      if (obj[key] === undefined) {
-        obj[key] = defaults[key];
+    var keys = Object.getOwnPropertyNames(defaults);
+
+    for (var i = 0; i < keys.length; i++) {
+      var key = keys[i];
+      var value = Object.getOwnPropertyDescriptor(defaults, key);
+
+      if (value && value.configurable && obj[key] === undefined) {
+        Object.defineProperty(obj, key, value);
       }
     }
 
@@ -72,6 +77,16 @@
 
   to5Runtime.toArray = function (arr) {
     return Array.isArray(arr) ? arr : Array.from(arr);
+  };
+
+  to5Runtime.toConsumableArray = function (arr) {
+    if (Array.isArray(arr)) {
+      for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
+
+      return arr2;
+    } else {
+      return Array.from(arr);
+    }
   };
 
   to5Runtime.slicedToArray = function (arr, i) {
@@ -195,20 +210,16 @@
     if (desc === undefined) {
       var parent = Object.getPrototypeOf(object);
 
-      if (parent === null) {
-        return;
-      } else {
+      if (parent !== null) {
         return set(parent, property, value, receiver);
       }
     } else if ("value" in desc && desc.writable) {
-      desc.value = value;
-      return;
+      return desc.value = value;
     } else {
       var setter = desc.set;
-      if (setter === undefined) {
-        return;
+      if (setter !== undefined) {
+        return setter.call(receiver, value);
       }
-      return setter.call(receiver, value);
     }
   };
 
@@ -221,6 +232,37 @@
   to5Runtime.objectDestructuringEmpty = function (obj) {
     if (obj == null) throw new TypeError("Cannot destructure undefined");
   };
+
+  to5Runtime.temporalUndefined = {};
+  to5Runtime.temporalAssertDefined = function (val, name, undef) {
+    if (val === undef) {
+      throw new ReferenceError(name + " is not defined - temporal dead zone");
+    }
+    return true;
+  };
+
+  to5Runtime.tailCall = (function () {
+    function Tail(func, args, context) {
+      this.func = func;
+      this.args = args;
+      this.context = context;
+    }
+
+    Tail.prototype._isTailDescriptor = true;
+    var isRunning = false;
+
+    return function (func, args, context) {
+      var result = new Tail(func, args, context);
+      if (!isRunning) {
+        isRunning = true;
+        do {
+          result = result.func.apply(result.context, result.args);
+        } while (result instanceof Tail || result && result._isTailDescriptor);
+        isRunning = false;
+      }
+      return result;
+    };
+  })();
 })(typeof global === "undefined" ? self : global);
 var helpers_helpers, index;
 helpers_helpers = function (exports) {
