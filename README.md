@@ -69,18 +69,10 @@ Once you've downloaded the files in this repo please run the following command i
 $ npm install && npm install grunt-cli -g
 ```
 
-# Dependencies
-
-All the code generated depends on the tiny [babel/external-helpers](https://babeljs.io/docs/usage/external-helpers/)
-You can include the babel helpers directly in your library ( [uncommenting this line](https://github.com/GianlucaGuarini/es6-project-starter-kit/blob/master/tasks/requirejs.coffee#L34) ) or just loading it in your page before your script:
-```html
-<script src="your-path-to/babel/external-helpers.js"></script>
-<script src="my-awesome-script.js"></script>
-```
+Browsing the [Gruntfile.coffee](Gruntfile.coffee) file you will find all the available terminal commands to compile/test your script. __This file contains also the script name used for the output__
 
 If you have installed correctly all the nodejs modules you can start writing your javascript modules into the `src` folder of course using the awesome javascript next syntax.
 
-Browsing the [Gruntfile.coffee](Gruntfile.coffee) file you will find all the available terminal commands to compile/test your script. __This file contains also the script name used for the output__
 
 ## Grunt tasks
 
@@ -112,6 +104,15 @@ $ grunt build
 ### Run the saucelabs tests
 ```shell
 $ grunt saucelabs
+```
+
+# Dependencies
+
+All the code generated depends on the tiny [babel/external-helpers](https://babeljs.io/docs/usage/external-helpers/)
+You can include the babel helpers directly in your library ( [uncommenting this line](https://github.com/GianlucaGuarini/es6-project-starter-kit/blob/master/tasks/requirejs.coffee#L34) ) or just loading it in your page before your script:
+```html
+<script src="your-path-to/babel/external-helpers.js"></script>
+<script src="my-awesome-script.js"></script>
 ```
 
 
