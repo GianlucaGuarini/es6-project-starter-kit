@@ -25,7 +25,7 @@
     });
   }
 
-  runner.on('end', function() {
+  runner.on('end', function () {
     window.mochaResults = runner.stats;
     window.mochaResults.reports = failedTests;
   });

@@ -14,7 +14,7 @@ Universal Starter Kit to build any javascript ES6 project/library runnable in no
 
 # Introduction
 
-javascript next introduces a lot of new cool [features](https://6to5.org/features.html) unfortunately not yet available in the current modern browsers. This starter kit contains all the tools you need to let you run your ES6 code on any kind of platform.
+javascript next introduces a lot of new cool [features](https://babeljs.ip/features.html) unfortunately not yet available in the current modern browsers. This starter kit contains all the tools you need to let you run your ES6 code on any kind of platform.
 
 ## javascript ES6
 
@@ -57,7 +57,7 @@ console.log(greeter.message) // -> goodbye Dear Coder!
 ## Tools available
 
 - [gruntjs](http://gruntjs.com/)
-- [6to5](https://6to5.org/)
+- [babeljs](https://babeljs.ip/)
 - [requirejs optimizer](https://github.com/jrburke/r.js/)
 - [amdclean](https://github.com/gfranko/amdclean)
 
@@ -67,6 +67,15 @@ Once you've downloaded the files in this repo please run the following command i
 
 ```shell
 $ npm install && npm install grunt-cli -g
+```
+
+# Dependencies
+
+All the code generated depends on the tiny [babel/external-helpers](https://babeljs.io/docs/usage/external-helpers/)
+You can include the babel helpers directly in your library ( [uncommenting this line](https://github.com/GianlucaGuarini/es6-project-starter-kit/blob/master/tasks/requirejs.coffee#L34) ) or just loading it in your page before your script:
+```html
+<script src="your-path-to/babel/external-helpers.js"></script>
+<script src="my-awesome-script.js"></script>
 ```
 
 If you have installed correctly all the nodejs modules you can start writing your javascript modules into the `src` folder of course using the awesome javascript next syntax.
@@ -83,6 +92,11 @@ $ grunt
 ### Run all the tests
 ```shell
 $ grunt test
+```
+
+### Start a nodejs static server
+```shell
+$ grunt serve
 ```
 
 ### To compile and/or test the project anytime a file gets changed

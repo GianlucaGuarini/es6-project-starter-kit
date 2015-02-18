@@ -21,7 +21,7 @@ module.exports = (grunt) ->
   grunt.registerTask 'build', [
     'clean:build'
     'jshint'
-    '6to5'
+    'babel'
     'requirejs'
     'clean:tmp'
   ]
@@ -32,11 +32,16 @@ module.exports = (grunt) ->
     'mocha'
   ]
 
+  # start a static node server
+  grunt.registerTask 'serve', [
+    'connect:serve'
+  ]
+
   # crossbrowser testing
   # you need to set up correctly the saucelabs connection
   # using your personal saucelabs account credentials
   grunt.registerTask 'saucelabs', [
-    'connect'
+    'connect:test'
     'saucelabs-mocha'
   ]
 

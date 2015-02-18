@@ -1,5 +1,11 @@
 ## Changelog
 
+### v3.0.0
+  * updated: dev dependencies
+  * updated: 6to5 to babel 4.3.0
+  * removed: 6to5 runtime dependecy
+  * added: `grunt serve` command
+
 ### v2.0.3
   * updated: 6to5 to 3.6.0
 
