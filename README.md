@@ -14,7 +14,7 @@ Universal Starter Kit to build any javascript ES6 project/library runnable in no
 
 # Introduction
 
-javascript next introduces a lot of new cool [features](https://babeljs.ip/features.html) unfortunately not yet available in the current modern browsers. This starter kit contains all the tools you need to let you run your ES6 code on any kind of platform.
+javascript next introduces a lot of new cool [features](https://babeljs.io/features.html) unfortunately not yet available in the current modern browsers. This starter kit contains all the tools you need to let you run your ES6 code on any kind of platform.
 
 ## javascript ES6
 
@@ -57,7 +57,7 @@ console.log(greeter.message) // -> goodbye Dear Coder!
 ## Tools available
 
 - [gruntjs](http://gruntjs.com/)
-- [babeljs](https://babeljs.ip/)
+- [babeljs](https://babeljs.io/)
 - [requirejs optimizer](https://github.com/jrburke/r.js/)
 - [amdclean](https://github.com/gfranko/amdclean)
 
