@@ -7,5 +7,5 @@ module.exports =
   serve:
     options:
       base: ''
-      post: 9999
+      port: 9999
       keepalive: true

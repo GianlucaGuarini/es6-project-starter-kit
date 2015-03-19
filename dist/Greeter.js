@@ -25,7 +25,7 @@ helpers_helpers = function (exports) {
      * @param  { String } string
      * @return { String }
      */
-    trim: function (string) {
+    trim: function trim(string) {
       return string.replace(/^\s+|\s+$/gm, '');
     }
   };
@@ -45,15 +45,14 @@ index = function (exports, _helpersHelpers) {
       this.name = name;
       this.text = text;
     }
-    babelHelpers.prototypeProperties(Greeter, null, {
+    babelHelpers.createClass(Greeter, {
       message: {
         get: function () {
           return '' + this.text + ' ' + this.name + '!';
         },
         set: function (text) {
           this.text = helpers.trim(text);
-        },
-        configurable: true
+        }
       }
     });
     return Greeter;

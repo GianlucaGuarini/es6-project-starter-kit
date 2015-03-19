@@ -1,5 +1,8 @@
 ## Changelog
 
+### v3.0.1
+  * updated: dev dependencies
+
 ### v3.0.0
   * updated: dev dependencies
   * updated: 6to5 to babel 4.3.0

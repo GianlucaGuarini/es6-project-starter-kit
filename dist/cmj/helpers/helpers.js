@@ -8,7 +8,7 @@ module.exports = {
    * @param  { String } string
    * @return { String }
    */
-  trim: function (string) {
+  trim: function trim(string) {
     return string.replace(/^\s+|\s+$/gm, "");
   }
 };
