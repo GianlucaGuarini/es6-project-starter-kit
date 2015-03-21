@@ -1,5 +1,8 @@
 ## Changelog
 
+### v3.0.11
+  * updated: small fix to the tests
+
 ### v3.0.1
   * updated: dev dependencies
 
