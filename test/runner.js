@@ -1,5 +1,10 @@
 (function() {
   'use strict';
+
+  if (window._phantom) {
+    return;
+  }
+
   var runner;
 
   runner = mocha.run();
