@@ -1,6 +1,7 @@
 'use strict';
 
 var spawn = require('child_process').spawn,
+  fs = require('fs'),
   utils = {
     /**
      * Return an options object to a valid arguments array for the child_process.spawn method
@@ -10,7 +11,7 @@ var spawn = require('child_process').spawn,
      *     baz: 'world'
      *   }
      * to:
-     *   ['--foo=hello', '--baz=world']
+     *   ['--foo=', 'hello', '--baz=','world']
      *
      * @param  { object } obj
      * @param  { array } optionsPrefix
@@ -21,7 +22,7 @@ var spawn = require('child_process').spawn,
       optionsPrefix = optionsPrefix || '--';
       var ret = [];
       for (var key in obj) {
-        ret.push(optionsPrefix + key + hasEquals ? '=' : ' ');
+        ret.push(optionsPrefix + key + (hasEquals ? '=' : ''));
         if (obj[key]) {
           ret.push(obj[key]);
         }
@@ -42,18 +43,36 @@ var spawn = require('child_process').spawn,
           cwd: process.cwd()
         });
 
-        cmd.stderr.on('data', function(data) {
-          utils.print(data);
-          reject(data);
-        });
-
-        cmd.stdout.on('data', function(data){
-          utils.print(data);
-          resolve(data);
+        cmd.on('exit', function(code) {
+          if(code === 1) {
+            reject();
+          } else {
+            resolve();
+          }
         });
 
       });
 
+    },
+    /**
+     * Delete any synchronously any folder or file
+     * @param  { string } path
+     */
+    delete: function(path) {
+      utils.print('Deleting the folder:' + path, 'confirm');
+      var files = [];
+      if(fs.existsSync(path)) {
+        files = fs.readdirSync(path);
+        files.forEach(function(file){
+          var curPath = path + '/' + file;
+          if(fs.lstatSync(curPath).isDirectory()) { // recurse
+            utils.delete(curPath);
+          } else { // delete file
+            fs.unlinkSync(curPath);
+          }
+        });
+        fs.rmdirSync(path);
+      }
     },
     /**
      * Log messages in the terminal using custom colors
@@ -78,7 +97,7 @@ var spawn = require('child_process').spawn,
         default:
           color = '';
       }
-      process.stdout.write(color + ' ' + msg + '\x1B[39m');
+      console.log(color + ' ' + msg + '\x1B[39m');
     }
   };
 

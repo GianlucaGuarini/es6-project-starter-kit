@@ -3,6 +3,7 @@
 var utils = require('./utils');
 
 module.exports = function() {
+
   var promise = utils.exec(
       './node_modules/.bin/eslint',
       [
@@ -10,5 +11,6 @@ module.exports = function() {
         'src',
         'test'
     ]);
+
   return promise;
 };
