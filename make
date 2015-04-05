@@ -2,12 +2,14 @@
 
 'use strict';
 
+global.library = 'Greeter';
+
 var command = process.argv[2],
+    utils = require('./tasks/utils'),
     eslint = require('./tasks/eslint'),
     build = require('./tasks/build'),
     watch = require('./tasks/watch'),
     serve = require('./tasks/serve');
-
 
 switch(command) {
   case 'serve':
@@ -19,7 +21,9 @@ switch(command) {
   case 'build':
     eslint()
       .then(build)
-      .then(serve);
+      .then(function(){
+        utils.print('Project successifully compiled!', 'confirm');
+      });
     break;
   case 'watch':
     watch();

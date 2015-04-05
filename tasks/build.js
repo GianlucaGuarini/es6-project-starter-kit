@@ -15,15 +15,16 @@ module.exports = function(options) {
       entry: './src/index.js',
       target: 'web',
       output: {
+        libraryTarget: 'umd',
+        library: global.library,
         path: './dist',
-        filename: '[name].bundle.js',
-        chunkFilename: '[id].bundle.js'
+        filename: global.library + '.js'
       },
       module: {
         loaders: [{
           test: /\.js$/,
           exclude: /node_modules/,
-          loader: 'babel-loader'
+          loader: 'babel-loader?externalHelpers=true'
         }]
       }
     }, function(err, stats) {

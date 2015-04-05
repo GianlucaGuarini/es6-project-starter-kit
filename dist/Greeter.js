@@ -1,4 +1,14 @@
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define(factory);
+	else if(typeof exports === 'object')
+		exports["Greeter"] = factory();
+	else
+		root["Greeter"] = factory();
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 
@@ -46,19 +56,13 @@
 
 	'use strict';
 
-	var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
-
-	var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } };
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
 	var _helpers = __webpack_require__(1);
 
-	var _helpers2 = _interopRequireWildcard(_helpers);
+	var _helpers2 = babelHelpers.interopRequireWildcard(_helpers);
 
 	/**
 	 * @class
@@ -69,14 +73,13 @@
 	  function Greeter() {
 	    var name = arguments[0] === undefined ? 'Dear Coder' : arguments[0];
 	    var text = arguments[1] === undefined ? 'hi there' : arguments[1];
-
-	    _classCallCheck(this, Greeter);
+	    babelHelpers.classCallCheck(this, Greeter);
 
 	    this.name = name;
 	    this.text = text;
 	  }
 
-	  _createClass(Greeter, [{
+	  babelHelpers.createClass(Greeter, [{
 	    key: 'message',
 	    get: function () {
 	      return '' + this.text + ' ' + this.name + '!';
@@ -85,7 +88,6 @@
 	      this.text = _helpers2['default'].trim(text);
 	    }
 	  }]);
-
 	  return Greeter;
 	})();
 
@@ -118,4 +120,6 @@
 	module.exports = exports['default'];
 
 /***/ }
-/******/ ]);
+/******/ ])
+});
+;
