@@ -12,11 +12,11 @@
   var failedTests = [];
 
   function logFailure(test, err) {
-    var flattenTitles = function(test) {
+    var flattenTitles = function(tmpTest) {
       var titles = [];
-      while (test.parent.title) {
-        titles.push(test.parent.title);
-        test = test.parent;
+      while (tmpTest.parent.title) {
+        titles.push(tmpTest.parent.title);
+        tmpTest = tmpTest.parent;
       }
       return titles.reverse();
     };

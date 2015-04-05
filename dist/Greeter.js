@@ -32,7 +32,7 @@ helpers_helpers = function (exports) {
   return exports;
 }({});
 index = function (exports, _helpersHelpers) {
-  var helpers = babelHelpers.interopRequire(_helpersHelpers);
+  var _helpers = babelHelpers.interopRequire(_helpersHelpers);
   /**
    * @class
    * An awesome script
@@ -45,16 +45,15 @@ index = function (exports, _helpersHelpers) {
       this.name = name;
       this.text = text;
     }
-    babelHelpers.createClass(Greeter, {
-      message: {
+    babelHelpers.createClass(Greeter, [{
+        key: 'message',
         get: function () {
           return '' + this.text + ' ' + this.name + '!';
         },
         set: function (text) {
-          this.text = helpers.trim(text);
+          this.text = _helpers.trim(text);
         }
-      }
-    });
+      }]);
     return Greeter;
   }();
   exports = Greeter;

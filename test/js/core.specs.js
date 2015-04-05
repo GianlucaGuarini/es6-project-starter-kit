@@ -2,7 +2,7 @@
 describe('Core', function() {
   'use strict';
   it('Greeter exsists', function() {
-    expect(Greeter).is.not.undefined;
+    expect(Greeter).is.not.undefined();
   });
   it('it can send friendly messages', function() {
     var greeter = new Greeter();
