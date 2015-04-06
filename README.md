@@ -14,10 +14,16 @@ Universal Starter Kit to build any javascript ES6 project/library runnable in no
 
 # Introduction
 
-javascript next introduces a lot of new cool [features](https://babeljs.io/features.html) unfortunately not yet available in the current modern browsers. This starter kit contains all the tools you need to let you run your ES6 code on any kind of platform.
+javascript 2015/es6/next introduces a lot of new cool [features](https://babeljs.io/features.html) unfortunately not yet available in the current modern browsers. This starter kit contains all the tools you need to let you run your ES6 code on any kind of platform.
+
+# Philosophy
+
+> Just use what you really need
+
+This project __doesn't rely on any building tool__ like gulp, grunt, duo...
+By using the [make](make) file and customizing the tasks in the [tasks](tasks) folder you should be able to output any javascript project just according to your needs
 
 ## javascript ES6
-
 
 ```javascript
 
@@ -56,60 +62,63 @@ console.log(greeter.message) // -> goodbye Dear Coder!
 
 ## Tools available
 
-- [gruntjs](http://gruntjs.com/)
 - [babeljs](https://babeljs.io/)
-- [requirejs optimizer](https://github.com/jrburke/r.js/)
-- [amdclean](https://github.com/gfranko/amdclean)
+- [webpack](https://github.com/webpack/webpack)
+- [karma](https://github.com/karma-runner/karma)
+- [chai](https://github.com/chaijs/chai)
+- [eslint](https://github.com/eslint/eslint)
+- [sinon](https://github.com/cjohansen/Sinon.JS)
+- [serve](https://github.com/tj/serve)
 
 # Usage
 
 Once you've downloaded the files in this repo please run the following command in your terminal from the project folder (it may require `sudo`):
 
 ```shell
-$ npm install && npm install grunt-cli -g
+$ npm install
 ```
 
-Browsing the [Gruntfile.coffee](Gruntfile.coffee) file you will find all the available terminal commands to compile/test your script. __This file contains also the script name used for the output__
+Browsing the [make](make) file you will find all the available terminal commands to compile/test your project. __This file contains also the script name used for the output__
+All the build tasks available are based on the __native javascript promises__ so you will be able to chain and combine them as you prefer
 
-If you have installed correctly all the nodejs modules you can start writing your javascript modules into the `src` folder of course using the awesome javascript next syntax.
+If you have installed correctly all the nodejs modules you can start writing your javascript modules into the `src` folder of course using the awesome javascript es6 syntax.
 
-
-## Grunt tasks
+## Available tasks
 
 ### Build and test
 ```shell
-$ grunt
+$ ./make
+```
+
+### Convert the ES6 code into valid ES5 combining all the modules into one single file,
+```shell
+$ ./make build
 ```
 
 ### Run all the tests
 ```shell
-$ grunt test
+$ ./make test
 ```
 
 ### Start a nodejs static server
 ```shell
-$ grunt serve
+$ ./make serve
 ```
 
 ### To compile and/or test the project anytime a file gets changed
 ```shell
-$ grunt watch
-```
-
-### Convert the ES6 code into valid ES5 and combine the modules into one single file
-```shell
-$ grunt build
+$ ./make watch
 ```
 
 ### Run the saucelabs tests
 ```shell
-$ grunt saucelabs
+$ ./make saucelabs
 ```
 
 # Dependencies
 
 All the code generated depends on the tiny [babel/external-helpers](https://babeljs.io/docs/usage/external-helpers/)
-You can include the babel helpers directly in your library ( [uncommenting this line](https://github.com/GianlucaGuarini/es6-project-starter-kit/blob/master/tasks/requirejs.coffee#L34) ) or just loading it in your page before your script:
+You can include the babel helpers directly in your library ( [updating this line](https://github.com/GianlucaGuarini/es6-project-starter-kit/blob/master/tasks/build.js#L36) ) or just loading it in your page before your script:
 ```html
 <script src="your-path-to/babel/external-helpers.js"></script>
 <script src="my-awesome-script.js"></script>

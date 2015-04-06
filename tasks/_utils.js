@@ -1,5 +1,9 @@
 'use strict';
 
+/**
+ * Helper functions shared across all the tasks
+ */
+
 var spawn = require('child_process').spawn,
   fs = require('fs'),
   utils = {
@@ -40,12 +44,13 @@ var spawn = require('child_process').spawn,
              obj1[i] = obj2[i];
           }
        }
+       return obj1;
     },
     /**
      * Run any system command
-     * @param  { string } command
-     * @param  { array } args command options
-     * @param  { object } envVariables command environment variables options
+     * @param  { string } command string
+     * @param  { array } args command arguments
+     * @param  { object } envVariables command environment variables
      * @retur  { promise } chainable promise object
      */
     exec: function(command, args, envVariables) {
@@ -86,7 +91,7 @@ var spawn = require('child_process').spawn,
           var curPath = path + '/' + file;
           files.push(curPath);
           if(fs.lstatSync(curPath).isDirectory()) { // recurse
-            utils.listFiles(curPath);
+            utils.listFiles(curPath, mustDelete);
           } else if(mustDelete) { // delete file
             fs.unlinkSync(curPath);
           }
@@ -102,7 +107,7 @@ var spawn = require('child_process').spawn,
      * Delete synchronously any folder or file
      * @param  { string } path
      */
-    delete: function(path) {
+    clean: function(path) {
       var files = utils.listFiles(path, true);
       utils.print('Deleting the following files: \n' + files.join('\n'), 'cool');
     },

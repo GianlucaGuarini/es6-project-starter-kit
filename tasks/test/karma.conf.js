@@ -7,7 +7,8 @@ module.exports = function(config) {
   if (process.env.SAUCELABS === 'true') {
     browsers = Object.keys(saucelabsBrowsers);
   }
-
+  // karma configuration
+  // http://karma-runner.github.io/0.12/config/configuration-file.html
   config.set({
       basePath: '../../',
       autoWatch: true,

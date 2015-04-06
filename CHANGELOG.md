@@ -1,5 +1,15 @@
 ## Changelog
 
+### v4.0.0
+  * ![Yeah](http://www.gifbin.com/bin/30075yu908.gif)
+  * removed: bye bye grunt tasks
+  * removed: jshint + jscs
+  * removed: requirejs optimizer + amdclean
+  * added: custom system tasks based on javascript native promises
+  * added: webpack as build tool
+  * added: eslint as default syntax style checker
+  * added: karma as default testing tool
+
 ### v3.0.11
   * updated: small fix to the tests
 
