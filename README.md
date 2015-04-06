@@ -20,8 +20,8 @@ javascript 2015/es6/next introduces a lot of new cool [features](https://babeljs
 
 > Just use what you really need
 
-This project __doesn't rely on any building tool__ like gulp, grunt, duo...
-By using the [make](make) file and customizing the tasks in the [tasks](tasks) folder you should be able to output any javascript project just according to your needs
+This project __doesn't rely on any build system tool__ like gulp, grunt, duo...
+By using the [make](make) file and customizing the tasks in the [tasks](tasks) folder you should be able to develop any kind of javascript project just fitting it to your needs
 
 ## javascript ES6
 
