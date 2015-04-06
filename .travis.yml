@@ -1,16 +1,13 @@
 language: node_js
 node_js:
-   - "0.10.32"
+   - "0.12.2"
 
 branches:
   only:
     - master
 
 after_success:
-    - grunt saucelabs
-
-before_script:
-    - npm install grunt-cli -g
+    - ./make saucelabs
 
 notifications:
     email: false

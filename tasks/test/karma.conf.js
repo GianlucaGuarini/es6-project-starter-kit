@@ -4,7 +4,7 @@ module.exports = function(config) {
       browsers = ['PhantomJS'];
 
   // run the tests only on the saucelabs browsers
-  if (process.env.SAUCELABS) {
+  if (process.env.SAUCELABS === 'true') {
     browsers = Object.keys(saucelabsBrowsers);
   }
 

@@ -78,7 +78,7 @@ var spawn = require('child_process').spawn,
      * @return { array } files path list
      */
     listFiles: function (path, mustDelete) {
-      utils.print('Deleting the folder:' + path, 'confirm');
+      utils.print('Lising all the files in the folder:' + path, 'confirm');
       var files = [];
       if(fs.existsSync(path)) {
         var tmpFiles = fs.readdirSync(path);
@@ -103,8 +103,8 @@ var spawn = require('child_process').spawn,
      * @param  { string } path
      */
     delete: function(path) {
-      utils.print('Deleting the folder:' + path, 'confirm');
-      utils.listFiles(path, true);
+      var files = utils.listFiles(path, true);
+      utils.print('Deleting the following files: \n' + files.join('\n'), 'cool');
     },
     /**
      * Log messages in the terminal using custom colors
