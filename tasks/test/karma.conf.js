@@ -21,7 +21,7 @@ module.exports = function(config) {
       ],
       sauceLabs: {
         build: process.env.TRAVIS_JOB_ID,
-        testname: process.env.LIBRARY_NAME
+        testName: process.env.LIBRARY_NAME
       },
       browserNoActivityTimeout: 120000,
       customLaunchers: saucelabsBrowsers,
@@ -36,7 +36,7 @@ module.exports = function(config) {
           'test/runner.js'
       ],
       browsers: browsers,
-      reporters: ['progress', 'coverage'],
+      reporters: ['progress', 'saucelabs', 'coverage'],
       preprocessors: {
           '../dist/*': ['coverage']
       },
