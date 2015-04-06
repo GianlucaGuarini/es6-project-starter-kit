@@ -5,7 +5,8 @@
   * removed: bye bye grunt tasks
   * removed: jshint + jscs
   * removed: requirejs optimizer + amdclean
-  * added: custom system tasks based on javascript native promises
+  * removed: `dist/cjs` folder nodejs will rely on the same file needed for the web environments
+  * added: custom build system based on javascript native promises
   * added: webpack as build tool
   * added: eslint as default syntax style checker
   * added: karma as default testing tool
