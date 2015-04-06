@@ -47,7 +47,7 @@ switch(command) {
       .then(minify)
       .then(test)
       .then(function(){
-        utils.print('Project successifully compiled!', 'confirm');
+        utils.print('Project successfully compiled!', 'confirm');
       });
 
 }
