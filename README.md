@@ -90,7 +90,7 @@ If you have installed correctly all the nodejs modules you can start writing you
 $ ./make
 ```
 
-### Convert the ES6 code into valid ES5 combining all the modules into one single file,
+### Convert the ES6 code into valid ES5 combining all the modules into one single file
 ```shell
 $ ./make build
 ```
