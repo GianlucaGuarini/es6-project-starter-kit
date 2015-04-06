@@ -1,6 +1,6 @@
 'use strict';
 
-var utils = require('./utils'),
+var utils = require('./_utils'),
     webpack = require('webpack');
 
 module.exports = function(options) {

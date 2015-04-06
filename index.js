@@ -1,1 +1,2 @@
-module.exports = require('./dist/cmj/index');
+// use here your library name
+module.exports = require('./dist/Greeter');

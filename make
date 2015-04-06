@@ -5,8 +5,9 @@
 global.library = 'Greeter';
 
 var command = process.argv[2],
-    utils = require('./tasks/utils'),
+    utils = require('./tasks/_utils'),
     eslint = require('./tasks/eslint'),
+    test = require('./tasks/test'),
     build = require('./tasks/build'),
     watch = require('./tasks/watch'),
     serve = require('./tasks/serve');
@@ -21,6 +22,7 @@ switch(command) {
   case 'build':
     eslint()
       .then(build)
+      .then(test)
       .then(function(){
         utils.print('Project successifully compiled!', 'confirm');
       });
@@ -29,8 +31,12 @@ switch(command) {
     watch();
     break;
   case 'test':
+    test();
     break;
   case 'saucelabs':
+    test({
+      saucelabs: true
+    });
     break;
   default:
 }

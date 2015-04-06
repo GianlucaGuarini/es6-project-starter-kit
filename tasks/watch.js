@@ -26,6 +26,4 @@ module.exports = function(options) {
     runTaskOnEvent(event, eslint);
   });
 
-  // 'test/**/*.js'
-
 };

@@ -30,14 +30,31 @@ var spawn = require('child_process').spawn,
       return ret;
     },
     /**
+     * Simple object extend function
+     * @param  { object } obj1 reciver
+     * @param  { object } obj2
+     */
+    extend: function(obj1, obj2) {
+       for (var i in obj2) {
+          if (obj2.hasOwnProperty(i)) {
+             obj1[i] = obj2[i];
+          }
+       }
+    },
+    /**
      * Run any system command
      * @param  { string } command
      * @param  { array } args command options
+     * @param  { object } envVariables command environment variables options
      * @retur  { promise } chainable promise object
      */
-    exec: function(command, args) {
+    exec: function(command, args, envVariables) {
       return new Promise(function(resolve, reject) {
+
+        // extend the env variables with some other custom options
+        utils.extend(process.env, envVariables);
         utils.print('Executing: ' + command + ' ' + args.join(' ') + '\n', 'confirm');
+
         var cmd = spawn(command, args, {
           stdio: 'inherit',
           cwd: process.cwd()
@@ -55,24 +72,39 @@ var spawn = require('child_process').spawn,
 
     },
     /**
-     * Delete any synchronously any folder or file
+     * Read all the files crawling starting from a certain folder path
+     * @param  { string } path directory path
+     * @param  { bool } mustDelete delete the files found
+     * @return { array } files path list
+     */
+    listFiles: function (path, mustDelete) {
+      utils.print('Deleting the folder:' + path, 'confirm');
+      var files = [];
+      if(fs.existsSync(path)) {
+        var tmpFiles = fs.readdirSync(path);
+        tmpFiles.forEach(function(file){
+          var curPath = path + '/' + file;
+          files.push(curPath);
+          if(fs.lstatSync(curPath).isDirectory()) { // recurse
+            utils.listFiles(curPath);
+          } else if(mustDelete) { // delete file
+            fs.unlinkSync(curPath);
+          }
+        });
+        if (mustDelete) {
+          fs.rmdirSync(path);
+        }
+      }
+
+      return files;
+    },
+    /**
+     * Delete synchronously any folder or file
      * @param  { string } path
      */
     delete: function(path) {
       utils.print('Deleting the folder:' + path, 'confirm');
-      var files = [];
-      if(fs.existsSync(path)) {
-        files = fs.readdirSync(path);
-        files.forEach(function(file){
-          var curPath = path + '/' + file;
-          if(fs.lstatSync(curPath).isDirectory()) { // recurse
-            utils.delete(curPath);
-          } else { // delete file
-            fs.unlinkSync(curPath);
-          }
-        });
-        fs.rmdirSync(path);
-      }
+      utils.listFiles(path, true);
     },
     /**
      * Log messages in the terminal using custom colors
