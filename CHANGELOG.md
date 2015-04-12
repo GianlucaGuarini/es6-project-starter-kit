@@ -1,6 +1,6 @@
 ## Changelog
 
-### v4.0.1
+### v4.0.2
   * updated: dev dependencies
 
 ### v4.0.0
