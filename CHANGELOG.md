@@ -1,5 +1,8 @@
 ## Changelog
 
+### v4.0.1
+  * updated: dev dependencies
+
 ### v4.0.0
   * ![Yeah](http://www.gifbin.com/bin/30075yu908.gif)
   * removed: bye bye grunt tasks
