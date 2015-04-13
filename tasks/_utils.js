@@ -83,7 +83,7 @@ var spawn = require('child_process').spawn,
      * @return { array } files path list
      */
     listFiles: function (path, mustDelete) {
-      utils.print('Lising all the files in the folder:' + path, 'confirm');
+      utils.print('Listing all the files in the folder:' + path, 'confirm');
       var files = [];
       if(fs.existsSync(path)) {
         var tmpFiles = fs.readdirSync(path);
