@@ -1,5 +1,9 @@
 ## Changelog
 
+### v4.0.3
+  * added: the `npm run` command aliases closing #6
+  * updated: dev dependencies
+
 ### v4.0.2
   * updated: dev dependencies
 

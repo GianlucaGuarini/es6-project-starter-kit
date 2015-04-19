@@ -87,32 +87,32 @@ If you have installed correctly all the nodejs modules you can start writing you
 
 ### Build and test
 ```shell
-$ ./make
+$ ./make # or also `$ npm run default`
 ```
 
 ### Convert the ES6 code into valid ES5 combining all the modules into one single file
 ```shell
-$ ./make build
+$ ./make build # or also `$ npm run build`
 ```
 
 ### Run all the tests
 ```shell
-$ ./make test
+$ ./make test # or also `$ npm run test`
 ```
 
 ### Start a nodejs static server
 ```shell
-$ ./make serve
+$ ./make serve # or also `$ npm run serve`
 ```
 
 ### To compile and/or test the project anytime a file gets changed
 ```shell
-$ ./make watch
+$ ./make watch # or also `$ npm run watch`
 ```
 
 ### Run the saucelabs tests
 ```shell
-$ ./make saucelabs
+$ ./make saucelabs # or also `$ npm run saucelabs`
 ```
 
 # Dependencies

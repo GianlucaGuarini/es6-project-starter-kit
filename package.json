@@ -1,10 +1,17 @@
 {
   "name": "es6-project-starter-kit",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "description": "Universal Starter Kit to build any javascript ES6 project/library runnable in nodejs and on any browser",
   "main": "index.js",
   "scripts": {
-    "test": "./make test"
+    "test": "node make test",
+    "serve": "node make serve",
+    "eslint": "node make eslint",
+    "build": "node make build",
+    "watch": "node make watch",
+    "minify": "node make minify",
+    "saucelabs": "node make saucelabs",
+    "default": "node make"
   },
   "repository": {
     "type": "git",
@@ -20,22 +27,22 @@
     "starter kit"
   ],
   "devDependencies": {
-    "babel": "^5.0.12",
-    "babel-core": "^5.0.12",
+    "babel": "^5.1.10",
+    "babel-core": "^5.1.10",
     "babel-loader": "^5.0.0",
     "chai": "^2.2.0",
     "chokidar": "^1.0.1",
     "eslint": "^0.19.0",
     "karma": "^0.12.31",
-    "karma-coverage": "^0.2.7",
+    "karma-coverage": "^0.3.1",
     "karma-mocha": "^0.1.10",
     "karma-phantomjs-launcher": "^0.1.4",
     "karma-sauce-launcher": "^0.2.10",
     "serve": "^1.4.0",
     "sinon": "^1.14.1",
     "sinon-chai": "^2.7.0",
-    "uglify-js": "^2.4.19",
-    "webpack": "^1.8.4"
+    "uglify-js": "^2.4.20",
+    "webpack": "^1.8.5"
   },
   "author": "Gianluca Guarini (http://gianlucaguarini.com/)",
   "license": "MIT",
