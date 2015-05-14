@@ -1,5 +1,9 @@
 ## Changelog
 
+### v4.0.4
+  * updated: es6 available also for the tests scripts
+  * updated: dev dependencies
+
 ### v4.0.3
   * added: the `npm run` command aliases closing #6
   * updated: dev dependencies

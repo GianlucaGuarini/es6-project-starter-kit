@@ -13,12 +13,6 @@ module.exports = function(config) {
       basePath: '../../',
       autoWatch: true,
       frameworks: ['mocha'],
-      plugins: [
-          'karma-mocha',
-          'karma-coverage',
-          'karma-phantomjs-launcher',
-          'karma-sauce-launcher'
-      ],
       sauceLabs: {
         build: process.env.TRAVIS_JOB_ID,
         testName: process.env.LIBRARY_NAME
@@ -38,7 +32,11 @@ module.exports = function(config) {
       browsers: browsers,
       reporters: ['progress', 'saucelabs', 'coverage'],
       preprocessors: {
-          '../dist/*': ['coverage']
+          '../dist/*': ['coverage'],
+          'test/**/*.js': ['babel']
+      },
+      'babelPreprocessor': {
+        sourceMap: 'inline'
       },
       coverageReporter: {
           dir: './coverage/'
