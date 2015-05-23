@@ -60,9 +60,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-	var _helpers = __webpack_require__(1);
+	var _helpersHelpers = __webpack_require__(1);
 
-	var _helpers2 = babelHelpers.interopRequireWildcard(_helpers);
+	var _helpersHelpers2 = babelHelpers.interopRequireDefault(_helpersHelpers);
 
 	/**
 	 * @class
@@ -85,7 +85,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return '' + this.text + ' ' + this.name + '!';
 	    },
 	    set: function (text) {
-	      this.text = _helpers2['default'].trim(text);
+	      this.text = _helpersHelpers2['default'].trim(text);
 	    }
 	  }]);
 	  return Greeter;
@@ -98,15 +98,15 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
+	/**
+	 * @module hepers
+	 * All the helper functions needed in this project
+	 */
 	'use strict';
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
-	/**
-	 * @module hepers
-	 * All the helper functions needed in this project
-	 */
 	exports['default'] = {
 	  /**
 	   * Returns a new string in which all leading and trailing occurrences of a set of specified characters from the current String object are removed.

@@ -54,13 +54,16 @@ var spawn = require('child_process').spawn,
      * @retur  { promise } chainable promise object
      */
     exec: function(command, args, envVariables) {
+
+      var path = require('path');
+
       return new Promise(function(resolve, reject) {
 
         // extend the env variables with some other custom options
         utils.extend(process.env, envVariables);
         utils.print('Executing: ' + command + ' ' + args.join(' ') + '\n', 'confirm');
 
-        var cmd = spawn(command, args, {
+        var cmd = spawn(path.normalize(command), args, {
           stdio: 'inherit',
           cwd: process.cwd()
         });

@@ -1,5 +1,8 @@
 ## Changelog
 
+### v4.0.5
+  * updated: dev dependencies
+
 ### v4.0.4
   * updated: es6 available also for the tests scripts
   * updated: dev dependencies
