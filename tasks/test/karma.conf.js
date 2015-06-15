@@ -35,9 +35,7 @@ module.exports = function(config) {
           '../dist/*': ['coverage'],
           'test/**/*.js': ['babel']
       },
-      'babelPreprocessor': {
-        sourceMap: 'inline'
-      },
+      'babelPreprocessor': {},
       coverageReporter: {
           dir: './coverage/'
       },

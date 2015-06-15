@@ -31,7 +31,7 @@ module.exports = function(options) {
   };
 
   // run eslint when a source file gets updated
-  utils.print('Watching the src/**/**/*.js path to trigger the eslint check', 'cool');
+  utils.print('Watching the files in the src/**/**/*.js path', 'cool');
   chokidar.watch('src/**/**/*.js', {
     ignoreInitial: true
   }).on('all', function(event) {
