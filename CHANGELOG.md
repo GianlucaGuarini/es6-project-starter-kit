@@ -1,5 +1,8 @@
 ## Changelog
 
+### v4.0.7
+  * updated: dev dependencies
+
 ### v4.0.6
   * updated: dev dependencies
 

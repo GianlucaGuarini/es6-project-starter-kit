@@ -2,7 +2,7 @@
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
-		define(factory);
+		define([], factory);
 	else if(typeof exports === 'object')
 		exports["Greeter"] = factory();
 	else
@@ -71,8 +71,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var Greeter = (function () {
 	  function Greeter() {
-	    var name = arguments[0] === undefined ? 'Dear Coder' : arguments[0];
-	    var text = arguments[1] === undefined ? 'hi there' : arguments[1];
+	    var name = arguments.length <= 0 || arguments[0] === undefined ? 'Dear Coder' : arguments[0];
+	    var text = arguments.length <= 1 || arguments[1] === undefined ? 'hi there' : arguments[1];
 	    babelHelpers.classCallCheck(this, Greeter);
 
 	    this.name = name;
@@ -81,10 +81,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  babelHelpers.createClass(Greeter, [{
 	    key: 'message',
-	    get: function () {
-	      return '' + this.text + ' ' + this.name + '!';
+	    get: function get() {
+	      return this.text + ' ' + this.name + '!';
 	    },
-	    set: function (text) {
+	    set: function set(text) {
 	      this.text = _helpersHelpers2['default'].trim(text);
 	    }
 	  }]);
