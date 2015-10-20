@@ -11,7 +11,8 @@
     "watch": "node make watch",
     "minify": "node make minify",
     "saucelabs": "node make saucelabs",
-    "default": "node make"
+    "default": "node make",
+    "prepublish": "node make"
   },
   "repository": {
     "type": "git",
