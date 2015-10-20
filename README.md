@@ -27,7 +27,7 @@ By using the [make](make) file and customizing the tasks in the [tasks](tasks) f
 
 ```javascript
 
-import helpers from './helpers/helpers';
+import helpers from './helpers/helpers'
 
 /**
  * @class
@@ -35,27 +35,27 @@ import helpers from './helpers/helpers';
  */
 class Greeter {
   constructor(name = 'Dear Coder', text = 'hi there') {
-    this.name = name;
-    this.text = text;
+    this.name = name
+    this.text = text
   }
   get message() {
-    return `${this.text} ${this.name}!`;
+    return `${this.text} ${this.name}!`
   }
   set message(text) {
-    this.text = helpers.trim(text);
+    this.text = helpers.trim(text)
   }
 }
 
-export default Greeter;
+export default Greeter
 ```
 
 ```javascript
-var greeter = new Greeter();
+var greeter = new Greeter()
 
-console.log(greeter.message) // -> hi there Dear Coder!
+console.log(greeter.message) // -> "hi there Dear Coder!"
 // these white spaces will be trimmed
-greeter.message = '   goodbye';
-console.log(greeter.message) // -> goodbye Dear Coder!
+greeter.message = '   goodbye         '
+console.log(greeter.message) // -> "goodbye Dear Coder!"
 
 ```
 
@@ -114,6 +114,13 @@ $ ./make watch # or also `$ npm run watch`
 ```shell
 $ ./make saucelabs # or also `$ npm run saucelabs`
 ```
+
+# Showcase
+
+List of projects build with `es6-project-starter-kit` :
+
+- [parallax](https://github.com/GianlucaGuarini/parallax)
+- [Caronte.js](https://github.com/GianlucaGuarini/Caronte.js)
 
 # Dependencies
 

@@ -1,5 +1,11 @@
 ## Changelog
 
+### v4.1.0
+  * updated: switch to ASI (Automatic Semicolon Insertion)
+  * updated: upgrade to node 4.*
+  * updated: dev dependencies
+  * added: showcase in the [README.md](README.md) file
+
 ### v4.0.7
   * updated: dev dependencies
 

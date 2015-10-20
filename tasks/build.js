@@ -1,22 +1,20 @@
-'use strict';
-
 var utils = require('./_utils'),
-    webpack = require('webpack');
+  webpack = require('webpack')
 
 module.exports = function(options) {
 
   options = utils.extend({
     config: 'tasks/build/webpack.config.js'
-  }, options);
+  }, options)
 
   // delete the old ./dist folder
-  utils.clean('./dist');
+  utils.clean('./dist')
 
   /**
    * Create a promise based on the result of the webpack compiling script
    */
 
-  return new Promise(function(resolve, reject){
+  return new Promise(function(resolve, reject) {
     // check https://github.com/webpack/webpack to see the available options
     webpack({
       entry: './src/index.js',
@@ -37,14 +35,14 @@ module.exports = function(options) {
         }]
       }
     }, function(err, stats) {
-      if(err) {
-        utils.print(err, 'error');
-        reject();
+      if (err) {
+        utils.print(err, 'error')
+        reject()
       } else {
-        utils.print(stats);
-        resolve();
+        utils.print(stats)
+        resolve()
       }
-    });
-  });
+    })
+  })
 
-};
+}
