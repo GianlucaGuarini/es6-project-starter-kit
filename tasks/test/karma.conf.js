@@ -18,6 +18,7 @@ module.exports = function(config) {
       testName: process.env.LIBRARY_NAME
     },
     browserNoActivityTimeout: 120000,
+    concurrency: 2,
     customLaunchers: saucelabsBrowsers,
     files: [
       'node_modules/mocha/mocha.js',
