@@ -63,7 +63,7 @@ console.log(greeter.message) // -> "goodbye Dear Coder!"
 ## Tools available
 
 - [babeljs](https://babeljs.io/)
-- [webpack](https://github.com/webpack/webpack)
+- [rollup](https://github.com/rollup/rollup)
 - [karma](https://github.com/karma-runner/karma)
 - [chai](https://github.com/chaijs/chai)
 - [eslint](https://github.com/eslint/eslint)
@@ -121,16 +121,6 @@ List of projects build with `es6-project-starter-kit` :
 
 - [parallax](https://github.com/GianlucaGuarini/parallax)
 - [Caronte.js](https://github.com/GianlucaGuarini/Caronte.js)
-
-# Dependencies
-
-All the code generated depends on the tiny [babel/external-helpers](https://babeljs.io/docs/usage/external-helpers/)
-You can include the babel helpers directly in your library ( [updating this line](https://github.com/GianlucaGuarini/es6-project-starter-kit/blob/master/tasks/build.js#L36) ) or just loading it in your page before your script:
-```html
-<script src="your-path-to/babel/external-helpers.js"></script>
-<script src="my-awesome-script.js"></script>
-```
-
 
 [npm-url]: https://npmjs.org/package/es6-project-starter-kit
 [npm-version-image]: http://img.shields.io/npm/v/es6-project-starter-kit.svg?style=flat-square

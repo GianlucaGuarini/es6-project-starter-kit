@@ -24,7 +24,6 @@ module.exports = function(config) {
       'node_modules/chai/chai.js',
       'node_modules/sinon/lib/sinon.js',
       'node_modules/sinon-chai/lib/sinon-chai.js',
-      'node_modules/babel-core/external-helpers.js',
       `dist/${process.env.LIBRARY_NAME}.js`,
       'test/specs/*.js',
       'test/runner.js'
@@ -35,7 +34,12 @@ module.exports = function(config) {
       '../dist/*': ['coverage'],
       'test/**/*.js': ['babel']
     },
-    'babelPreprocessor': {},
+    'babelPreprocessor': {
+      options: {
+        presets: ['es2015'],
+        sourceMap: 'inline'
+      }
+    },
     coverageReporter: {
       dir: './coverage/'
     },

@@ -1,7 +1,6 @@
 import helpers from './helpers/helpers'
 
 /**
- * @class
  * An awesome script
  */
 class Greeter {

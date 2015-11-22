@@ -1,5 +1,10 @@
 ## Changelog
 
+
+### v5.0.0
+  * removed: webpack replaced with rollup
+  * updated: babel to 6.*
+
 ### v4.1.0
   * updated: switch to ASI (Automatic Semicolon Insertion)
   * updated: upgrade to node 4.*

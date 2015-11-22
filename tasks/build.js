@@ -1,11 +1,10 @@
 var utils = require('./_utils'),
-  webpack = require('webpack')
+  rollup = require( 'rollup' ),
+  mkdirp = require('mkdirp'),
+  fs = require('fs'),
+  babel = require('babel-core')
 
 module.exports = function(options) {
-
-  options = utils.extend({
-    config: 'tasks/build/webpack.config.js'
-  }, options)
 
   // delete the old ./dist folder
   utils.clean('./dist')
@@ -15,33 +14,33 @@ module.exports = function(options) {
    */
 
   return new Promise(function(resolve, reject) {
-    // check https://github.com/webpack/webpack to see the available options
-    webpack({
-      entry: './src/index.js',
-      target: 'web',
-      output: {
-        libraryTarget: 'umd',
-        library: global.library,
-        path: './dist',
-        filename: global.library + '.js'
-      },
-      module: {
-        loaders: [{
-          test: /\.js$/,
-          exclude: /node_modules/,
-          // remove the ?externalHelpers=true if you want to include
-          // the babel helpers directly in your library
-          loader: 'babel-loader?externalHelpers=true'
-        }]
-      }
-    }, function(err, stats) {
-      if (err) {
-        utils.print(err, 'error')
-        reject()
-      } else {
-        utils.print(stats)
+
+    rollup.rollup({
+      // The bundle's starting point. This file will be
+      // included, along with the minimum necessary code
+      // from its dependencies
+      entry: './src/index.js'
+    }).then( function ( bundle ) {
+
+      // convert to valid es5 code with babel
+      var result = babel.transform(
+        // create a single bundle file
+        bundle.generate({
+          format: 'cjs'
+        }).code,
+        {
+          moduleId: global.library,
+          moduleIds: true,
+          presets: ['es2015'],
+          plugins: ['transform-es2015-modules-umd']
+        }
+      ).code
+
+      mkdirp('./dist', function() {
+        fs.writeFileSync(`./dist/${ global.library }.js`, result, 'utf8')
         resolve()
-      }
+      })
+
     })
   })
 
