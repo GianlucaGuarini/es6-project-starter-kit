@@ -1,5 +1,7 @@
 ## Changelog
 
+### v5.0.1
+  * added: all the missing peerDependencies `mocha` and `phantomjs`
 
 ### v5.0.0
   * removed: webpack replaced with rollup
