@@ -1,10 +1,4 @@
-'use strict'
-
-/**
- * @module hepers
- * All the helper functions needed in this project
- */
-;
+'use strict';
 
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
