@@ -1,5 +1,5 @@
 /**
- * @module hepers
+ * @module helpers
  * All the helper functions needed in this project
  */
 export default {
