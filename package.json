@@ -1,8 +1,9 @@
 {
   "name": "es6-project-starter-kit",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "Universal Starter Kit to build any javascript ES6 project/library runnable in nodejs and on any browser",
   "main": "index.js",
+  "jsnext:main": "src/index.js",
   "scripts": {
     "test": "node make test",
     "serve": "node make serve",
@@ -46,7 +47,7 @@
     "sinon": "^1.17.2",
     "sinon-chai": "^2.8.0",
     "uglify-js": "^2.6.1",
-       "mocha": "^2.3.3",
+    "mocha": "^2.3.3",
     "phantomjs-prebuilt": "^2.1.3"
   },
   "author": "Gianluca Guarini (http://gianlucaguarini.com/)",

@@ -3,6 +3,7 @@
 ### v5.0.2
   * updated: dev dependencies and updated
   * removed: peerDependencies
+  * added: `jsnext:main` property in the package.json file
   * added: better error logs for the build step
 
 ### v5.0.1

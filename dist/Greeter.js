@@ -43,18 +43,18 @@
     }
   };
 
-  var Greeter = (function () {
-    function Greeter() {
+  var index = (function () {
+    function index() {
       var name = arguments.length <= 0 || arguments[0] === undefined ? 'Dear Coder' : arguments[0];
       var text = arguments.length <= 1 || arguments[1] === undefined ? 'hi there' : arguments[1];
 
-      _classCallCheck(this, Greeter);
+      _classCallCheck(this, index);
 
       this.name = name;
       this.text = text;
     }
 
-    _createClass(Greeter, [{
+    _createClass(index, [{
       key: 'message',
       get: function get() {
         return this.text + ' ' + this.name + '!';
@@ -64,8 +64,8 @@
       }
     }]);
 
-    return Greeter;
+    return index;
   })();
 
-  module.exports = Greeter;
+  module.exports = index;
 });

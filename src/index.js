@@ -3,7 +3,7 @@ import helpers from './helpers/helpers'
 /**
  * An awesome script
  */
-class Greeter {
+export default class {
   constructor(name = 'Dear Coder', text = 'hi there') {
     this.name = name
     this.text = text
@@ -15,5 +15,3 @@ class Greeter {
     this.text = helpers.trim(text)
   }
 }
-
-export default Greeter
