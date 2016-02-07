@@ -23,7 +23,7 @@ module.exports = function(config) {
     files: [
       'node_modules/mocha/mocha.js',
       'node_modules/chai/chai.js',
-      'node_modules/sinon/lib/sinon.js',
+      'node_modules/sinon/pkg/sinon.js',
       'node_modules/sinon-chai/lib/sinon-chai.js',
       `dist/${process.env.LIBRARY_NAME}.js`,
       'test/specs/*.js',

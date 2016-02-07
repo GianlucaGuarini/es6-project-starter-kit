@@ -42,7 +42,7 @@ module.exports = function(options) {
         resolve()
       })
 
-    })
+    }).catch(e =>{ utils.print(e, 'error') })
   })
 
 }

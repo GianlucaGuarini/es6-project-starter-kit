@@ -1,5 +1,9 @@
 ## Changelog
 
+### v5.0.2
+  * updated: dev dependencies and updated the peerDependencies
+  * added: better error logs for the build step
+
 ### v5.0.1
   * added: all the missing peerDependencies `mocha` and `phantomjs`
 
