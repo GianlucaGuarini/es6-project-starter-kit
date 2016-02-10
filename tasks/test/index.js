@@ -8,7 +8,7 @@ module.exports = function(options) {
   }, options)
   // run karma
   return utils.exec(
-    './node_modules/karma/bin/karma',
+    './node_modules/.bin/karma',
     [
       'start',
       'tasks/test/karma.conf.js'
