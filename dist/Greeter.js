@@ -1,5 +1,3 @@
-'use strict';
-
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
     define('Greeter', ['module'], factory);
@@ -13,13 +11,15 @@
     global.Greeter = mod.exports;
   }
 })(this, function (module) {
+  'use strict';
+
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
       throw new TypeError("Cannot call a class as a function");
     }
   }
 
-  var _createClass = (function () {
+  var _createClass = function () {
     function defineProperties(target, props) {
       for (var i = 0; i < props.length; i++) {
         var descriptor = props[i];
@@ -35,7 +35,7 @@
       if (staticProps) defineProperties(Constructor, staticProps);
       return Constructor;
     };
-  })();
+  }();
 
   var helpers = {
     trim: function trim(string) {
@@ -43,7 +43,7 @@
     }
   };
 
-  var index = (function () {
+  var index = function () {
     function index() {
       var name = arguments.length <= 0 || arguments[0] === undefined ? 'Dear Coder' : arguments[0];
       var text = arguments.length <= 1 || arguments[1] === undefined ? 'hi there' : arguments[1];
@@ -65,7 +65,7 @@
     }]);
 
     return index;
-  })();
+  }();
 
   module.exports = index;
 });

@@ -55,14 +55,12 @@ var spawn = require('child_process').spawn,
      */
     exec(command, args, envVariables) {
 
-      var path = require('path')
-      var os = require('os')
+      var path = require('path'),
+        os = require('os')
 
       return new Promise(function(resolve, reject) {
 
-        if (os.platform() == 'win32' || os.platform() == 'win64') {
-          command = command + '.cmd'
-        }
+        if (os.platform() == 'win32' || os.platform() == 'win64') command += '.cmd'
 
         // extend the env variables with some other custom options
         utils.extend(process.env, envVariables)
