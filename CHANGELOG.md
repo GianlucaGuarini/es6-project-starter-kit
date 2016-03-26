@@ -1,5 +1,8 @@
 ## Changelog
 
+### v5.1.0
+  * updated: dev dependencies
+
 ### v5.0.3
   * fixed: compatibility issues on windows [more info](https://github.com/GianlucaGuarini/es6-project-starter-kit/issues/8)
   * updated: dev dependencies
