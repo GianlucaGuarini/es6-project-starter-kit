@@ -2,6 +2,7 @@
 
 ### v5.1.1
   * updated: optimized the `watch` errors handling
+  * updated: dev dependencies
 
 ### v5.1.0
   * updated: dev dependencies
