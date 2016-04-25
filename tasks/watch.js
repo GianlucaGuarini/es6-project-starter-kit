@@ -36,6 +36,7 @@ module.exports = function(options) {
     runOnlyOn(event)
       .then(eslint)
       .then(build)
+      .catch(e => utils.print(e, 'error'))
   })
 
 }

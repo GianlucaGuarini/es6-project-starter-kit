@@ -76,7 +76,6 @@ var spawn = require('child_process').spawn,
             reject()
           else
             resolve()
-
         })
 
       })
