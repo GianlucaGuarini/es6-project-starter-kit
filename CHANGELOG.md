@@ -1,5 +1,8 @@
 ## Changelog
 
+### v5.1.2
+  * updated: dev dependencies
+
 ### v5.1.1
   * updated: optimized the `watch` errors handling
   * updated: dev dependencies
