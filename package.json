@@ -35,7 +35,7 @@
     "chai": "^3.5.0",
     "chokidar": "^1.5.1",
     "eslint": "^2.11.1",
-    "karma": "^0.13.22",
+    "karma": "^1.0.0",
     "karma-babel-preprocessor": "^6.0.1",
     "karma-coverage": "^1.0.0",
     "karma-mocha": "^1.0.1",
