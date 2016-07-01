@@ -34,7 +34,7 @@
     "babel-preset-es2015": "^6.9.0",
     "chai": "^3.5.0",
     "chokidar": "^1.5.1",
-    "eslint": "^2.11.1",
+    "eslint": "^3.0.0",
     "karma": "^1.0.0",
     "karma-babel-preprocessor": "^6.0.1",
     "karma-coverage": "^1.0.0",
