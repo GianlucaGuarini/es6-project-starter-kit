@@ -42,7 +42,7 @@
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-sauce-launcher": "^1.0.0",
     "mkdirp": "^0.5.1",
-    "rollup": "^0.32.0",
+    "rollup": "^0.33.1",
     "serve": "^1.4.0",
     "sinon": "^1.17.4",
     "sinon-chai": "^2.8.0",
