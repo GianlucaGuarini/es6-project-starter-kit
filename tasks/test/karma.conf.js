@@ -7,6 +7,7 @@ module.exports = function(config) {
   if (process.env.SAUCELABS === 'true') {
     browsers = Object.keys(saucelabsBrowsers)
   }
+
   // karma configuration
   // http://karma-runner.github.io/0.12/config/configuration-file.html
   config.set({
@@ -21,7 +22,6 @@ module.exports = function(config) {
     concurrency: 2,
     customLaunchers: saucelabsBrowsers,
     files: [
-      'node_modules/mocha/mocha.js',
       'node_modules/chai/chai.js',
       'node_modules/sinon/pkg/sinon.js',
       'node_modules/sinon-chai/lib/sinon-chai.js',
