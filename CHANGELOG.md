@@ -1,5 +1,8 @@
 ## Changelog
 
+### v5.3.0
+  * updated: dev dependencies
+
 ### v5.2.0
   * updated: dev dependencies
   * fixed: unit test
