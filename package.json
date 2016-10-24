@@ -40,7 +40,7 @@
     "karma-coverage": "^1.1.1",
     "karma-mocha": "^1.1.1",
     "karma-phantomjs-launcher": "^1.0.2",
-    "karma-sauce-launcher": "^1.0.0",
+    "karma-sauce-launcher": "^1.1.0",
     "mkdirp": "^0.5.1",
     "rollup": "^0.36.2",
     "serve": "^1.4.0",
