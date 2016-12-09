@@ -48,7 +48,7 @@
     "sinon-chai": "^2.8.0",
     "uglify-js": "^2.7.3",
     "mocha": "^3.0.2",
-    "phantomjs-prebuilt": "^2.1.12"
+    "phantomjs-prebuilt": "^2.1.14"
   },
   "author": "Gianluca Guarini (http://gianlucaguarini.com/)",
   "license": "MIT",
