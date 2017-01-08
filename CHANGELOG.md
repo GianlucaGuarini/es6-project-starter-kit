@@ -1,5 +1,8 @@
 ## Changelog
 
+### v5.3.1
+  * updated: dev dependencies
+
 ### v5.3.0
   * updated: dev dependencies
 
