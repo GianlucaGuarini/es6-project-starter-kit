@@ -45,8 +45,8 @@
 
   var index = function () {
     function index() {
-      var name = arguments.length <= 0 || arguments[0] === undefined ? 'Dear Coder' : arguments[0];
-      var text = arguments.length <= 1 || arguments[1] === undefined ? 'hi there' : arguments[1];
+      var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Dear Coder';
+      var text = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'hi there';
 
       _classCallCheck(this, index);
 
