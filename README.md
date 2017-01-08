@@ -6,11 +6,11 @@ Universal Starter Kit to build any javascript ES6 project/library runnable in no
 [![Dependency Status][gemnasium-image]][gemnasium-url]
 [![NPM version][npm-version-image]][npm-url]
 [![NPM downloads][npm-downloads-image]][npm-url]
+[![Donate][donate-image]][paypal-link]
 
 [![MIT License][license-image]][license-url]
 
 [![Sauce Test Status][saucelabs-image]][saucelabs-url]
-
 
 # Introduction
 
@@ -140,4 +140,7 @@ List of projects build with `es6-project-starter-kit` :
 
 [license-url]: LICENSE
 [license-image]: http://img.shields.io/badge/license-MIT-000000.svg?style=flat-square
+
+[paypal-link]:https://www.paypal.me/GianlucaGuarini
+[donate-image]:https://img.shields.io/badge/donate-%E2%9D%A4-brightgreen.svg?style=flat-square
 
