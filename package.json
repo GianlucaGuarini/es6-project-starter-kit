@@ -46,7 +46,7 @@
     "serve": "^4.0.0",
     "sinon": "^1.17.7",
     "sinon-chai": "^2.8.0",
-    "uglify-js": "^2.7.5",
+    "uglify-js": "^2.8.5",
     "mocha": "^3.2.0",
     "phantomjs-prebuilt": "^2.1.14"
   },
