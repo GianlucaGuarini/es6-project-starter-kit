@@ -11,7 +11,8 @@ module.exports = function(options) {
 
   var sourcePath = `${options.base}${global.library}.js`,
     outputPath = `${options.base}${global.library}.min.js`,
-    output = uglify.minify(sourcePath)
+    code = fs.readFileSync(sourcePath, "utf8"),
+    output = uglify.minify(code)
 
   /**
    * Create a promise based on the result of the uglify output
