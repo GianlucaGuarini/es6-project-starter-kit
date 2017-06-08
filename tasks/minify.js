@@ -11,7 +11,7 @@ module.exports = function(options) {
 
   var sourcePath = `${options.base}${global.library}.js`,
     outputPath = `${options.base}${global.library}.min.js`,
-    code = fs.readFileSync(sourcePath, "utf8"),
+    code = fs.readFileSync(sourcePath, 'utf8'),
     output = uglify.minify(code)
 
   /**
