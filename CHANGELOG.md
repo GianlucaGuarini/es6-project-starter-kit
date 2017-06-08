@@ -1,5 +1,8 @@
 ## Changelog
 
+### v6.0.0
+  * removed: saucelabs tests
+
 ### v5.3.2
   * updated: dev dependencies
 

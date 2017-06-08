@@ -10,8 +10,6 @@ Universal Starter Kit to build any javascript ES6 project/library runnable in no
 
 [![MIT License][license-image]][license-url]
 
-[![Sauce Test Status][saucelabs-image]][saucelabs-url]
-
 # Introduction
 
 javascript 2015/es6/next introduces a lot of new cool [features](https://babeljs.io/features.html) unfortunately not yet available in the current modern browsers. This starter kit contains all the tools you need to let you run your ES6 code on any kind of platform.
@@ -21,7 +19,7 @@ javascript 2015/es6/next introduces a lot of new cool [features](https://babeljs
 > Just use what you really need
 
 This project __doesn't rely on any build system tool__ like gulp, grunt, duo...
-By using the [make](make) file and customizing the tasks in the [tasks](tasks) folder you should be able to develop any kind of javascript project just fitting it to your needs
+By using the [make.js](make) file and customizing the tasks in the [tasks](tasks) folder you should be able to develop any kind of javascript project just fitting it to your needs
 
 ## javascript ES6
 
@@ -78,7 +76,7 @@ Once you've downloaded the files in this repo please run the following command i
 $ npm install
 ```
 
-Browsing the [make](make) file you will find all the available terminal commands to compile/test your project. __This file contains also the script name used for the output__
+Browsing the [make.js](make) file you will find all the available terminal commands to compile/test your project. __This file contains also the script name used for the output__
 All the build tasks available are based on the __native javascript promises__ so you will be able to chain and combine them as you prefer
 
 If you have installed correctly all the nodejs modules you can start writing your javascript modules into the `src` folder of course using the awesome javascript es6 syntax.
@@ -87,32 +85,27 @@ If you have installed correctly all the nodejs modules you can start writing you
 
 ### Build and test
 ```shell
-$ ./make # or also `$ npm run default`
+$ node make # or also `$ npm run default`
 ```
 
 ### Convert the ES6 code into valid ES5 combining all the modules into one single file
 ```shell
-$ ./make build # or also `$ npm run build`
+$ node make build # or also `$ npm run build`
 ```
 
 ### Run all the tests
 ```shell
-$ ./make test # or also `$ npm run test`
+$ node make test # or also `$ npm run test`
 ```
 
 ### Start a nodejs static server
 ```shell
-$ ./make serve # or also `$ npm run serve`
+$ node make serve # or also `$ npm run serve`
 ```
 
 ### To compile and/or test the project anytime a file gets changed
 ```shell
-$ ./make watch # or also `$ npm run watch`
-```
-
-### Run the saucelabs tests
-```shell
-$ ./make saucelabs # or also `$ npm run saucelabs`
+$ node make watch # or also `$ npm run watch`
 ```
 
 # Showcase
@@ -131,12 +124,6 @@ List of projects build with `es6-project-starter-kit` :
 
 [travis-url]:https://travis-ci.org/GianlucaGuarini/es6-project-starter-kit
 [travis-image]: https://img.shields.io/travis/GianlucaGuarini/es6-project-starter-kit.svg?style=flat-square
-
-[saucelabs-image]:https://saucelabs.com/browser-matrix/es6-project-starter-kit.svg
-[saucelabs-url]:https://saucelabs.com/u/es6-project-starter-kit
-
-[saucelabs-image]:https://saucelabs.com/browser-matrix/es6projectstarterkit.svg
-[saucelabs-url]:https://saucelabs.com/u/es6projectstarterkit
 
 [license-url]: LICENSE
 [license-image]: http://img.shields.io/badge/license-MIT-000000.svg?style=flat-square
