@@ -2,6 +2,7 @@
 
 ### v6.0.0
   * removed: saucelabs tests
+  * updated: the `make` file was renamed `make.js` and it should be triggered via `node make`
 
 ### v5.3.2
   * updated: dev dependencies
