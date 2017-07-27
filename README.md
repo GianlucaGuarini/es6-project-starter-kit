@@ -19,7 +19,7 @@ javascript 2015/es6/next introduces a lot of new cool [features](https://babeljs
 > Just use what you really need
 
 This project __doesn't rely on any build system tool__ like gulp, grunt, duo...
-By using the [make.js](make) file and customizing the tasks in the [tasks](tasks) folder you should be able to develop any kind of javascript project just fitting it to your needs
+By using the [make](make.js) file and customizing the tasks in the [tasks](tasks) folder you should be able to develop any kind of javascript project just fitting it to your needs
 
 ## javascript ES6
 
@@ -76,7 +76,7 @@ Once you've downloaded the files in this repo please run the following command i
 $ npm install
 ```
 
-Browsing the [make.js](make) file you will find all the available terminal commands to compile/test your project. __This file contains also the script name used for the output__
+Browsing the [make](make.js) file you will find all the available terminal commands to compile/test your project. __This file contains also the script name used for the output__
 All the build tasks available are based on the __native javascript promises__ so you will be able to chain and combine them as you prefer
 
 If you have installed correctly all the nodejs modules you can start writing your javascript modules into the `src` folder of course using the awesome javascript es6 syntax.
