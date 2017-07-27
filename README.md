@@ -2,12 +2,10 @@ Universal Starter Kit to build any javascript ES6 project/library runnable in no
 ====================
 
 [![Build Status][travis-image]][travis-url]
-
 [![Dependency Status][gemnasium-image]][gemnasium-url]
 [![NPM version][npm-version-image]][npm-url]
 [![NPM downloads][npm-downloads-image]][npm-url]
 [![Donate][donate-image]][paypal-link]
-
 [![MIT License][license-image]][license-url]
 
 # Introduction
