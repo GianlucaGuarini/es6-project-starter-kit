@@ -12,7 +12,7 @@
     "watch": "node make watch",
     "minify": "node make minify",
     "default": "node make",
-    "prepublish": "node make"
+    "prepare": "node make"
   },
   "repository": {
     "type": "git",
