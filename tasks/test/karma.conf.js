@@ -1,3 +1,5 @@
+process.env.CHROME_BIN = require('puppeteer').executablePath()
+
 module.exports = function(config) {
   // karma configuration
   // http://karma-runner.github.io/0.12/config/configuration-file.html
@@ -15,7 +17,7 @@ module.exports = function(config) {
       'test/specs/*.js',
       'test/runner.js'
     ],
-    browsers: ['PhantomJS'],
+    browsers: ['ChromeHeadless'],
     reporters: ['progress', 'coverage'],
     preprocessors: {
       '../dist/*': ['coverage'],

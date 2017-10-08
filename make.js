@@ -19,6 +19,7 @@ case 'serve':
   serve()
   break
 case 'eslint':
+case 'lint':
   eslint()
   break
 case 'build':
@@ -28,6 +29,7 @@ case 'watch':
   watch()
   break
 case 'minify':
+case 'min':
   minify()
   break
 case 'test':
@@ -35,10 +37,10 @@ case 'test':
   break
 default:
   eslint()
-      .then(build)
-      .then(minify)
-      .then(test)
-      .then(function() {
-        utils.print('Project successfully compiled!', 'confirm')
-      })
+    .then(build)
+    .then(minify)
+    .then(test)
+    .then(function() {
+      utils.print('Project successfully compiled!', 'confirm')
+    })
 }

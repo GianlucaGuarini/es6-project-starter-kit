@@ -1,5 +1,12 @@
 ## Changelog
 
+### v7.0.0
+  * added: the `min` and `lint` aliases
+  * changed: use headless chrome instead of the deprecated phantomjs for the karma tests
+  * changed: use babel-env to configure the babel presets
+  * changed: replace the deprecated `prepublish` with `prepare` in the package.json
+  * updated: all dependencies
+
 ### v6.0.0
   * removed: saucelabs tests
   * updated: the `make` file was renamed `make.js` and it should be triggered via `node make`

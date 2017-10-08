@@ -14,38 +14,35 @@ module.exports = function(options) {
    */
 
   return new Promise(function(resolve, reject) {
-
     rollup.rollup({
       // The bundle's starting point. This file will be
       // included, along with the minimum necessary code
       // from its dependencies
-      entry: './src/index.js'
+      input: './src/index.js'
     }).then( function ( bundle ) {
-
-      // convert to valid es5 code with babel
-      var result = babel.transform(
-        // create a single bundle file
-        bundle.generate({
-          format: 'cjs'
-        }).code,
-        {
-          moduleId: global.library,
-          moduleIds: true,
-          comments: false,
-          presets: ['env'],
-          plugins: ['transform-es2015-modules-umd']
-        }
-      ).code
-
-      mkdirp('./dist', function() {
-        try {
-          fs.writeFileSync(`./dist/${ global.library }.js`, result, 'utf8')
-          resolve()
-        } catch (e) {
-          reject(e)
-        }
+      bundle.generate({
+        format: 'cjs'
+      }).then(({ code }) => {
+        // convert to valid es5 code with babel
+        const result = babel.transform(
+          code,
+          {
+            moduleId: global.library,
+            moduleIds: true,
+            comments: false,
+            presets: ['env'],
+            plugins: ['transform-es2015-modules-umd']
+          }
+        )
+        mkdirp('./dist', function() {
+          try {
+            fs.writeFileSync(`./dist/${ global.library }.js`, result.code, 'utf8')
+            resolve()
+          } catch (e) {
+            reject(e)
+          }
+        })
       })
-
     }).catch(e =>{ utils.print(e, 'error') })
   })
 
