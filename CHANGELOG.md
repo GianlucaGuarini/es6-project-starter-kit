@@ -6,6 +6,7 @@
   * changed: use babel-env to configure the babel presets
   * changed: replace the deprecated `prepublish` with `prepare` in the package.json
   * updated: all dependencies
+  * removed: support for node 4 and 5
 
 ### v6.0.0
   * removed: saucelabs tests
