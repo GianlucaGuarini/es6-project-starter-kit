@@ -32,7 +32,7 @@ module.exports = function(options) {
           moduleId: global.library,
           moduleIds: true,
           comments: false,
-          presets: ['es2015'],
+          presets: ['env'],
           plugins: ['transform-es2015-modules-umd']
         }
       ).code
